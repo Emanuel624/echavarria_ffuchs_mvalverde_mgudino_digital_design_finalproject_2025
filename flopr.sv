@@ -1,0 +1,15 @@
+
+module flopr #(
+  parameter WIDTH = 8
+)(
+  input  logic              clk,
+  input  logic              reset,
+  input  logic [WIDTH-1:0]  d,
+  output logic [WIDTH-1:0]  q
+);
+  // Reset asíncrono, captura en flanco positivo de clk
+  always_ff @(posedge clk or posedge reset) begin
+    if (reset) q <= '0;   // limpia a 0 (ancho WIDTH)
+    else       q <= d;
+  end
+endmodule
