@@ -33,8 +33,6 @@ module datapath (
   mux2  #(.WIDTH(4))  ra2mux (Instr[3:0],   Instr[15:12], RegSrc[1], RA2);
 
   // rf: (clk, we, ra1, ra2, wa, wd, r15, rd1, rd2)
-  // CAMBIO CRUCIAL: Escribir ALUResult directamente, no Result
-  // Esto evita circular dependencies
   regfile rf (
     clk, RegWrite, RA1, RA2,
     Instr[15:12], ALUResult, PCPlus8,
@@ -47,9 +45,14 @@ module datapath (
   // -----------------------
   // ALU logic
   // -----------------------
+  // CORRECCIÓN: Para BRANCH, SrcB debe ser ExtImm (el offset)
+  // Para DATA-PROCESSING, SrcB puede ser WriteData o ExtImm según ALUSrc
   mux2  #(.WIDTH(32)) srcbmux (WriteData, ExtImm, ALUSrc, SrcB);
 
   // alu: (A, B, ALUControl, Result, Flags)
+  // Para BRANCH: A = SrcA (que es PCPlus8 gracias a RegSrc[0]=0)
+  //              B = SrcB (que es ExtImm con ALUSrc=1)
+  //              Result = PCPlus8 + offset = nueva dirección de PC
   alu alu (
     SrcA, SrcB, ALUControl, ALUResult, ALUFlags
   );
