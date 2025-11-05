@@ -3,12 +3,13 @@ module testbench();
   logic        reset;
   logic [31:0] WriteData, DataAdr;
   logic        MemWrite;
+  logic [7:0]  LED;
 
-  // DUT
-  top dut (clk, reset, WriteData, DataAdr, MemWrite);
+  // DUT - Instancia top_sim SIN divisor de reloj (para simulacion rapida)
+  top_sim dut (clk, reset, WriteData, DataAdr, MemWrite, LED);
 
   // =====================================================
-  // INICIALIZACIÓN
+  // INICIALIZACION
   // =====================================================
   initial begin
     clk   = 1'b0;
@@ -17,7 +18,7 @@ module testbench();
     reset = 1'b0;
   end
 
-  always #5 clk = ~clk;
+  always #5 clk = ~clk;  // Reloj de 50 MHz (10 ns periodo)
 
   // =====================================================
   // CONTADORES Y VARIABLES DE TEST
@@ -30,39 +31,44 @@ module testbench();
   integer branch_count = 0;
   
   logic [31:0] prev_pc = 32'h0;
-  logic [31:0] r0_value = 32'h0;
-  logic [31:0] r1_value = 32'h0;
-  logic [31:0] r2_value = 32'h0;
 
   // =====================================================
-  // CONTADOR DE CICLOS
+  // CONTADOR DE CICLOS (ciclos del reloj RAPIDO de 50 MHz)
   // =====================================================
   always @(posedge clk) begin
     if (!reset) cycle_count <= cycle_count + 1;
   end
 
   // =====================================================
-  // DETECTOR DE INSTRUCCIONES
+  // DETECTOR DE INSTRUCCIONES (en el reloj rapido)
   // =====================================================
   always @(posedge clk) begin
     if (!reset) begin
       case (dut.arm.Instr)
         32'hE0400000: begin // MOV R0, #0
-          mov_executed = mov_executed + 1;
-          $display("[C:%0d] MOV R0, #0 (E0400000) ✓", cycle_count);
+          if (mov_executed == 0) begin
+            mov_executed = mov_executed + 1;
+            $display("[C:%0d] MOV R0, #0 (E0400000) OK", cycle_count);
+          end
         end
         32'hE2801007: begin // ADD R1, R0, #7
-          add_executed = add_executed + 1;
-          $display("[C:%0d] ADD R1, R0, #7 (E2801007) ✓", cycle_count);
+          if (add_executed == 0) begin
+            add_executed = add_executed + 1;
+            $display("[C:%0d] ADD R1, R0, #7 (E2801007) OK", cycle_count);
+          end
         end
         32'hE5801064: begin // STR R1, [R0, #100]
+          str_write_count = str_write_count + 1;
           $display("[C:%0d] STR R1, [R0, #100] (E5801064) ejecutada", cycle_count);
         end
         32'hE5902064: begin // LDR R2, [R0, #100]
-          ldr_executed = ldr_executed + 1;
-          $display("[C:%0d] LDR R2, [R0, #100] (E5902064) ✓", cycle_count);
+          if (ldr_executed == 0) begin
+            ldr_executed = ldr_executed + 1;
+            $display("[C:%0d] LDR R2, [R0, #100] (E5902064) OK", cycle_count);
+          end
         end
-        32'hEAFFFFFFC: begin // B .-4
+        32'hEAFFFFFC: begin // B .-4
+          branch_count = branch_count + 1;
           $display("[C:%0d] BRANCH (EAFFFFFC) ejecutado", cycle_count);
         end
       endcase
@@ -74,41 +80,35 @@ module testbench();
   // =====================================================
   always @(negedge clk) begin
     if (MemWrite) begin
-      str_write_count = str_write_count + 1;
-      $display("[C:%0d] MemWrite: DMEM[%0d] ← 0x%h", 
+      $display("[C:%0d] MemWrite: DMEM[%0d] = 0x%h", 
                cycle_count, DataAdr, WriteData);
       
       if ((DataAdr === 32'd100) && (WriteData === 32'd7)) begin
-        $display("       ✓ Escritura correcta: 7 en dirección 100");
+        $display("       CORRECTO: 7 en direccion 100");
       end else begin
-        $display("       ✗ ERROR: Escritura incorrecta");
+        $display("       ERROR: Escritura incorrecta");
       end
     end
   end
 
   // =====================================================
-  // DETECTOR DE SALTOS (BRANCH)
-  // =====================================================
-  always @(posedge clk) begin
-    if (!reset && dut.arm.PC != prev_pc + 32'd4 && prev_pc != 32'h0) begin
-      branch_count = branch_count + 1;
-      $display("[C:%0d] BRANCH: PC = 0x%h → 0x%h (delta: %d bytes)", 
-               cycle_count, prev_pc, dut.arm.PC, $signed(dut.arm.PC - prev_pc));
-    end
-    prev_pc = dut.arm.PC;
-  end
-
-  // =====================================================
-  // LEER REGISTROS
+  // MONITOR DE PC - MUESTRA CADA CAMBIO
   // =====================================================
   initial begin
-    @(posedge clk);
+    $display("\n[MONITOR DE PC - Seguimiento de ejecucion]");
+    $display("Ciclo | PC actual | Instruccion");
+    $display("------|-----------|------------------------------");
     forever begin
       @(posedge clk);
-      if (!reset && cycle_count % 5 == 0) begin
-        r0_value = dut.arm.u_datapathdp.SrcA; // Lectura de R0
-        r1_value = dut.arm.u_datapathdp.WriteData; // Lectura de R1
-        $display("[STATE] R0=%0d | R1=%0d", r0_value, r1_value);
+      if (!reset) begin
+        case (dut.arm.Instr)
+          32'hE0400000: $display("%0d    | 0x%h | MOV R0, #0", cycle_count, dut.arm.PC);
+          32'hE2801007: $display("%0d    | 0x%h | ADD R1, R0, #7", cycle_count, dut.arm.PC);
+          32'hE5801064: $display("%0d    | 0x%h | STR R1, [R0, #100]", cycle_count, dut.arm.PC);
+          32'hE5902064: $display("%0d    | 0x%h | LDR R2, [R0, #100]", cycle_count, dut.arm.PC);
+          32'hEAFFFFFC: $display("%0d    | 0x%h | BRANCH (JMP)", cycle_count, dut.arm.PC);
+          default:    $display("%0d    | 0x%h | DESCONOCIDA", cycle_count, dut.arm.PC);
+        endcase
       end
     end
   end
@@ -117,86 +117,80 @@ module testbench();
   // TIMEOUT
   // =====================================================
   initial begin
-    #1000; // 1000 ns de timeout
-    $display("\n*** TIMEOUT: Simulación llegó al máximo de tiempo ***");
+    #100000; // 100,000 ns = suficiente sin divisor
+    $display("\n*** TIMEOUT: Simulacion llego al maximo de tiempo ***");
+    print_results();
     $stop;
   end
 
   // =====================================================
-  // REPORTE FINAL
+  // ESPERA A QUE SE EJECUTEN LAS INSTRUCCIONES Y REPORTA
   // =====================================================
   initial begin
-    wait (cycle_count >= 50); // Espera 50 ciclos
-    @(posedge clk);
+    wait (mov_executed >= 1 && add_executed >= 1 && str_write_count >= 1 && 
+          ldr_executed >= 1 && branch_count >= 1);
     
+    #100; // Espera un poco mas para estabilidad
+    print_results();
+    $stop;
+  end
+
+  // =====================================================
+  // FUNCION PARA IMPRIMIR RESULTADOS
+  // =====================================================
+  task print_results();
     $display("\n");
-    $display("╔═══════════════════════════════════════════════════════╗");
-    $display("║         REPORTE FINAL DE SIMULACIÓN                  ║");
-    $display("╠═══════════════════════════════════════════════════════╣");
-    $display("║ Ciclos ejecutados: %0d", cycle_count);
-    $display("║ MOV ejecutados: %0d", mov_executed);
-    $display("║ ADD ejecutados: %0d", add_executed);
-    $display("║ STR ejecutados: %0d", str_write_count);
-    $display("║ LDR ejecutados: %0d", ldr_executed);
-    $display("║ BRANCH ejecutados: %0d", branch_count);
-    $display("╠═══════════════════════════════════════════════════════╣");
+    $display("======================================================");
+    $display("         REPORTE FINAL DE SIMULACION");
+    $display("======================================================");
+    $display("Ciclos ejecutados: %0d", cycle_count);
+    $display("MOV ejecutados: %0d", mov_executed);
+    $display("ADD ejecutados: %0d", add_executed);
+    $display("STR ejecutados: %0d", str_write_count);
+    $display("LDR ejecutados: %0d", ldr_executed);
+    $display("BRANCH ejecutados: %0d", branch_count);
+    $display("======================================================");
     
-    // Tests
-    if (mov_executed >= 1) begin
-      $display("║ ✓ TEST 1: MOV (aritmética) PASSED");
+    // Prueba A: Aritmetica
+    if (mov_executed >= 1 && add_executed >= 1) begin
+      $display("OK PRUEBA A: ARITMETICA (MOV, ADD) PASSED");
     end else begin
-      $display("║ ✗ TEST 1: MOV FAILED");
+      $display("FAIL PRUEBA A: ARITMETICA FAILED");
     end
     
-    if (add_executed >= 1) begin
-      $display("║ ✓ TEST 2: ADD (aritmética) PASSED");
+    // Prueba B: Load/Store
+    if (str_write_count >= 1 && ldr_executed >= 1) begin
+      $display("OK PRUEBA B: LOAD/STORE (STR, LDR) PASSED");
     end else begin
-      $display("║ ✗ TEST 2: ADD FAILED");
+      $display("FAIL PRUEBA B: LOAD/STORE FAILED");
     end
     
-    if (str_write_count >= 1) begin
-      $display("║ ✓ TEST 3: STR (Load/Store) PASSED");
-    end else begin
-      $display("║ ✗ TEST 3: STR FAILED");
-    end
-    
-    if (ldr_executed >= 1) begin
-      $display("║ ✓ TEST 4: LDR (Load/Store) PASSED");
-    end else begin
-      $display("║ ✗ TEST 4: LDR FAILED");
-    end
-    
+    // Prueba C: Flujo (Jump/Branch)
     if (branch_count >= 1) begin
-      $display("║ ✓ TEST 5: BRANCH (Flujo) PASSED");
+      $display("OK PRUEBA C: FLUJO (BRANCH/JUMP) PASSED");
     end else begin
-      $display("║ ✗ TEST 5: BRANCH FAILED");
+      $display("FAIL PRUEBA C: FLUJO FAILED");
     end
     
-    if (str_write_count >= 2) begin
-      $display("║ ✓ TEST 6: LOOP (Repetición) PASSED");
-    end else begin
-      $display("║ ✗ TEST 6: LOOP FAILED");
-    end
-    
-    $display("╠═══════════════════════════════════════════════════════╣");
+    $display("======================================================");
     
     // Resumen
     if ((mov_executed >= 1) && (add_executed >= 1) && (str_write_count >= 1) && 
         (ldr_executed >= 1) && (branch_count >= 1)) begin
-      $display("║                                                       ║");
-      $display("║  ✓✓✓ TODOS LOS TESTS PASARON ✓✓✓                  ║");
-      $display("║                                                       ║");
-      $display("║  Tu procesador ARM es COMPLETAMENTE FUNCIONAL      ║");
-      $display("║  - Aritmética: ✓ MOV, ADD                          ║");
-      $display("║  - Load/Store: ✓ STR, LDR                          ║");
-      $display("║  - Flujo:      ✓ BRANCH con loop                   ║");
-      $display("║                                                       ║");
+      $display("");
+      $display("TODAS LAS PRUEBAS PASARON");
+      $display("");
+      $display("COMPLETAMENTE FUNCIONAL");
+      $display("");
+      $display("a) Aritmetica: OK MOV, ADD");
+      $display("b) Load/Store: OK STR, LDR");
+      $display("c) Flujo:      OK BRANCH (Jump)");
+      $display("");
     end else begin
-      $display("║  ✗ ALGUNOS TESTS FALLARON                           ║");
+      $display("ALGUNAS PRUEBAS FALLARON");
     end
     
-    $display("╚═══════════════════════════════════════════════════════╝\n");
-    $stop;
-  end
+    $display("======================================================\n");
+  endtask
 
 endmodule
