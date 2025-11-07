@@ -7,12 +7,12 @@ module dmem (
   // 64 palabras de 32 bits: índices 0..63
   logic [31:0] RAM [0:63];
 
-  // Lectura combinacional (word-aligned).
-  // Para 64 palabras usamos 6 bits de índice: a[7:2]
-  assign rd = RAM[a[7:2]];
+  // Lectura combinacional
+  // Para 64 palabras 6 bits de índice: a[7:2]
+  assign rd = RAM[a[31:2]];
 
   // Escritura sincrónica
   always_ff @(posedge clk) begin
-    if (we) RAM[a[7:2]] <= wd;
+    if (we) RAM[a[31:2]] <= wd;
   end
 endmodule

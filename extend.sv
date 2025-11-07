@@ -4,7 +4,7 @@ module extend (
   output logic [31:0] ExtImm
 );
   always_comb begin
-    // valor por defecto (evita latches)
+    // valor por defecto 
     ExtImm = 32'b0;
 
     case (ImmSrc)
@@ -14,10 +14,10 @@ module extend (
       // 12-bit unsigned immediate
       2'b01: ExtImm = {20'b0, Instr[11:0]};
 
-      // 24-bit two's complement shifted branch (sign-extend & << 2)
+      // 24-bit two's complement shifted branch
       2'b10: ExtImm = {{6{Instr[23]}}, Instr[23:0], 2'b00};
 
-      // undefined → mantiene el default (32'b0) para síntesis
+      // undefined mantiene el default (32'b0) para síntesis
       default: /* ExtImm = 32'b0 */;
     endcase
   end

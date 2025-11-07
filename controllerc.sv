@@ -18,7 +18,7 @@ module controllerc (
   logic [1:0] FlagW;
   logic       PCS, RegW, MemW;
 
-  // Decoder principal (usa campos de Instr)
+  // Decoder principal 
   decoderdec u_decoderdec (
     Instr[27:26],      // Op
     Instr[25:20],      // Funct
@@ -27,7 +27,7 @@ module controllerc (
     MemtoReg, ALUSrc, ImmSrc, RegSrc, ALUControl
   );
 
-  // Lógica de condición (tu archivo define 'condlogic')
+  // Lógica de condición 
   condlogic u_condlogic (
     clk, reset,
     Instr[31:28],      // Cond

@@ -21,7 +21,6 @@ module condlogic (
   flopenr #(.WIDTH(2)) flagreg1 (clk, reset, FlagWrite[1], ALUFlags[3:2], Flags[3:2]);
   flopenr #(.WIDTH(2)) flagreg0 (clk, reset, FlagWrite[0], ALUFlags[1:0], Flags[1:0]);
 
-  // write controls are conditional
   condcheck cc (Cond, Flags, CondEx);
 
   assign FlagWrite = FlagW & {2{CondEx}};

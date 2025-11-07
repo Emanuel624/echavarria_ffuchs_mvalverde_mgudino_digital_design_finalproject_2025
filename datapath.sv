@@ -45,8 +45,6 @@ module datapath (
   // -----------------------
   // ALU logic
   // -----------------------
-  // CORRECCIÓN: Para BRANCH, SrcB debe ser ExtImm (el offset)
-  // Para DATA-PROCESSING, SrcB puede ser WriteData o ExtImm según ALUSrc
   mux2  #(.WIDTH(32)) srcbmux (WriteData, ExtImm, ALUSrc, SrcB);
 
   // alu: (A, B, ALUControl, Result, Flags)

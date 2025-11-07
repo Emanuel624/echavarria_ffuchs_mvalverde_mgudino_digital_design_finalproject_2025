@@ -13,10 +13,10 @@ module decoderdec (
   logic       Branch, ALUOp;
 
   // -----------------------
-  // Main Decoder
+  // Decoder
   // -----------------------
   always_comb begin
-    // valor por defecto (evita latches)
+    // valor por defecto 
     controls = 10'b0000000000;
 
     // Op[1:0] con don't-cares permitidos
@@ -38,7 +38,7 @@ module decoderdec (
         controls = 10'b0110100010;
       end
 
-      // No implementado: deja controles en cero (o coloca Xs si solo simulas)
+      // Default
       default: begin
         controls = 10'b0000000000; // 10'bxxxxxxxxxx para sim-only
       end
@@ -54,11 +54,11 @@ module decoderdec (
   // -----------------------
   always_comb begin
     // valores por defecto
-    ALUControl = 2'b00;     // ADD por defecto p/ no-DP
-    FlagW      = 2'b00;     // no actualizar flags por defecto
+    ALUControl = 2'b00;     // ADD por defecto
+    FlagW      = 2'b00;    
 
     if (ALUOp) begin
-      // ¿Cuál DP instruction?
+      // Cuál DP instruction?
       unique case (Funct[4:1])
         4'b0100: ALUControl = 2'b00; // ADD
         4'b0010: ALUControl = 2'b01; // SUB
@@ -68,7 +68,7 @@ module decoderdec (
       endcase
 
       // Actualización de flags si S bit está en 1
-      // (C & V solo para aritméticas ADD/SUB, aquí las distinguimos con ALUControl)
+      // (C & V solo para aritméticas ADD/SUB, distinguir ALUControl)
       FlagW[1] = Funct[0]; // NZ
       FlagW[0] = Funct[0] & ((ALUControl == 2'b00) || (ALUControl == 2'b01)); // CV
     end

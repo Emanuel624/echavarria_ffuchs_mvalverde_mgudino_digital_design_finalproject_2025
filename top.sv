@@ -12,7 +12,7 @@ module top (
   // =====================================================
   // DIVISOR DE FRECUENCIA
   // =====================================================
-  // Divide el reloj de 50 MHz a algo mucho más lento
+  // Divide el reloj de 50 MHz
   // Para ver cada instrucción claramente
   // =====================================================
   logic [24:0] clk_counter;
@@ -25,12 +25,11 @@ module top (
     end
   end
 
-  // clk_div es HIGH durante 25 millones de ciclos y LOW otros 25 millones
+
   // Esto crea un reloj de ~1 Hz (cada instrucción tarda ~1 segundo)
   assign clk_div = clk_counter[24];
 
   // =====================================================
-  // Instantiate processor and memories
   // CAMBIO: Usa clk_div en lugar de clk para que sea lento
   // =====================================================
   arm  arm  (clk_div, reset, PC, Instr, MemWrite, ALUResult, WriteData, ReadData);
@@ -39,7 +38,7 @@ module top (
 
   // Instantiate LED controller
   led_controller led_ctrl (
-    .clk(clk_div),      // También usa el reloj dividido
+    .clk(clk_div),      // reloj dividido
     .reset(reset),
     .Instr(Instr),
     .PC(PC),

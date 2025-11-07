@@ -1,29 +1,5 @@
-|top
-clk => clk_counter[0].CLK
-clk => clk_counter[1].CLK
-clk => clk_counter[2].CLK
-clk => clk_counter[3].CLK
-clk => clk_counter[4].CLK
-clk => clk_counter[5].CLK
-clk => clk_counter[6].CLK
-clk => clk_counter[7].CLK
-clk => clk_counter[8].CLK
-clk => clk_counter[9].CLK
-clk => clk_counter[10].CLK
-clk => clk_counter[11].CLK
-clk => clk_counter[12].CLK
-clk => clk_counter[13].CLK
-clk => clk_counter[14].CLK
-clk => clk_counter[15].CLK
-clk => clk_counter[16].CLK
-clk => clk_counter[17].CLK
-clk => clk_counter[18].CLK
-clk => clk_counter[19].CLK
-clk => clk_counter[20].CLK
-clk => clk_counter[21].CLK
-clk => clk_counter[22].CLK
-clk => clk_counter[23].CLK
-clk => clk_counter[24].CLK
+|top_sim
+clk => clk.IN3
 reset => reset.IN2
 WriteData[0] << WriteData[0].DB_MAX_OUTPUT_PORT_TYPE
 WriteData[1] << WriteData[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -100,7 +76,7 @@ LED[6] << led_controller:led_ctrl.LED
 LED[7] << led_controller:led_ctrl.LED
 
 
-|top|arm:arm
+|top_sim|arm:arm
 clk => clk.IN2
 reset => reset.IN2
 PC[0] <= datapath:u_datapathdp.port10
@@ -266,7 +242,7 @@ ReadData[30] => ReadData[30].IN1
 ReadData[31] => ReadData[31].IN1
 
 
-|top|arm:arm|controllerc:u_controllerc
+|top_sim|arm:arm|controllerc:u_controllerc
 clk => clk.IN1
 reset => reset.IN1
 Instr[0] => ~NO_FANOUT~
@@ -318,7 +294,7 @@ MemtoReg <= decoderdec:u_decoderdec.port7
 PCSrc <= condlogic:u_condlogic.port8
 
 
-|top|arm:arm|controllerc:u_controllerc|decoderdec:u_decoderdec
+|top_sim|arm:arm|controllerc:u_controllerc|decoderdec:u_decoderdec
 Op[0] => Mux0.IN4
 Op[0] => Mux1.IN4
 Op[0] => Decoder0.IN1
@@ -354,7 +330,7 @@ ALUControl[0] <= ALUControl.DB_MAX_OUTPUT_PORT_TYPE
 ALUControl[1] <= ALUControl.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|controllerc:u_controllerc|condlogic:u_condlogic
+|top_sim|arm:arm|controllerc:u_controllerc|condlogic:u_condlogic
 clk => clk.IN2
 reset => reset.IN2
 Cond[0] => Cond[0].IN1
@@ -375,7 +351,7 @@ RegWrite <= RegWrite.DB_MAX_OUTPUT_PORT_TYPE
 MemWrite <= MemWrite.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|controllerc:u_controllerc|condlogic:u_condlogic|flopenr:flagreg1
+|top_sim|arm:arm|controllerc:u_controllerc|condlogic:u_condlogic|flopenr:flagreg1
 clk => q[0]~reg0.CLK
 clk => q[1]~reg0.CLK
 reset => q[0]~reg0.ACLR
@@ -388,7 +364,7 @@ q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|controllerc:u_controllerc|condlogic:u_condlogic|flopenr:flagreg0
+|top_sim|arm:arm|controllerc:u_controllerc|condlogic:u_condlogic|flopenr:flagreg0
 clk => q[0]~reg0.CLK
 clk => q[1]~reg0.CLK
 reset => q[0]~reg0.ACLR
@@ -401,7 +377,7 @@ q[0] <= q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[1] <= q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|controllerc:u_controllerc|condlogic:u_condlogic|condcheck:cc
+|top_sim|arm:arm|controllerc:u_controllerc|condlogic:u_condlogic|condcheck:cc
 Cond[0] => Mux0.IN14
 Cond[1] => Mux0.IN13
 Cond[2] => Mux0.IN12
@@ -422,7 +398,7 @@ Flags[3] => Mux0.IN4
 CondEx <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp
+|top_sim|arm:arm|datapath:u_datapathdp
 clk => clk.IN2
 reset => reset.IN1
 RegSrc[0] => RegSrc[0].IN1
@@ -601,7 +577,7 @@ ReadData[30] => ReadData[30].IN1
 ReadData[31] => ReadData[31].IN1
 
 
-|top|arm:arm|datapath:u_datapathdp|mux2:pcmux
+|top_sim|arm:arm|datapath:u_datapathdp|mux2:pcmux
 d0[0] => y.DATAA
 d0[1] => y.DATAA
 d0[2] => y.DATAA
@@ -732,7 +708,7 @@ y[30] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp|flopr:pcreg
+|top_sim|arm:arm|datapath:u_datapathdp|flopr:pcreg
 clk => q[0]~reg0.CLK
 clk => q[1]~reg0.CLK
 clk => q[2]~reg0.CLK
@@ -863,7 +839,7 @@ q[30] <= q[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[31] <= q[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp|adder:pcadd1
+|top_sim|arm:arm|datapath:u_datapathdp|adder:pcadd1
 a[0] => Add0.IN32
 a[1] => Add0.IN31
 a[2] => Add0.IN30
@@ -962,7 +938,7 @@ y[30] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp|adder:pcadd2
+|top_sim|arm:arm|datapath:u_datapathdp|adder:pcadd2
 a[0] => Add0.IN32
 a[1] => Add0.IN31
 a[2] => Add0.IN30
@@ -1061,7 +1037,7 @@ y[30] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp|mux2:ra1mux
+|top_sim|arm:arm|datapath:u_datapathdp|mux2:ra1mux
 d0[0] => y.DATAA
 d0[1] => y.DATAA
 d0[2] => y.DATAA
@@ -1080,7 +1056,7 @@ y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp|mux2:ra2mux
+|top_sim|arm:arm|datapath:u_datapathdp|mux2:ra2mux
 d0[0] => y.DATAA
 d0[1] => y.DATAA
 d0[2] => y.DATAA
@@ -1099,7 +1075,7 @@ y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp|regfile:rf
+|top_sim|arm:arm|datapath:u_datapathdp|regfile:rf
 clk => rf.we_a.CLK
 clk => rf.waddr_a[3].CLK
 clk => rf.waddr_a[2].CLK
@@ -1361,7 +1337,7 @@ rd2[30] <= rd2.DB_MAX_OUTPUT_PORT_TYPE
 rd2[31] <= rd2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp|mux2:resmux
+|top_sim|arm:arm|datapath:u_datapathdp|mux2:resmux
 d0[0] => y.DATAA
 d0[1] => y.DATAA
 d0[2] => y.DATAA
@@ -1492,7 +1468,7 @@ y[30] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp|extend:ext
+|top_sim|arm:arm|datapath:u_datapathdp|extend:ext
 Instr[0] => Mux9.IN3
 Instr[0] => ExtImm.DATAA
 Instr[1] => Mux8.IN3
@@ -1599,7 +1575,7 @@ ExtImm[30] <= ExtImm.DB_MAX_OUTPUT_PORT_TYPE
 ExtImm[31] <= ExtImm.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp|mux2:srcbmux
+|top_sim|arm:arm|datapath:u_datapathdp|mux2:srcbmux
 d0[0] => y.DATAA
 d0[1] => y.DATAA
 d0[2] => y.DATAA
@@ -1730,7 +1706,7 @@ y[30] <= y.DB_MAX_OUTPUT_PORT_TYPE
 y[31] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|arm:arm|datapath:u_datapathdp|alu:alu
+|top_sim|arm:arm|datapath:u_datapathdp|alu:alu
 A[0] => Add0.IN32
 A[0] => Add1.IN64
 A[0] => Result.IN0
@@ -2096,7 +2072,7 @@ ALUFlags[2] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 ALUFlags[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|top|imem:imem
+|top_sim|imem:imem
 a[0] => ~NO_FANOUT~
 a[1] => ~NO_FANOUT~
 a[2] => RAM.RADDR
@@ -2163,7 +2139,7 @@ rd[30] <= RAM.DATAOUT30
 rd[31] <= RAM.DATAOUT31
 
 
-|top|dmem:dmem
+|top_sim|dmem:dmem
 clk => RAM.we_a.CLK
 clk => RAM.waddr_a[5].CLK
 clk => RAM.waddr_a[4].CLK
@@ -2348,7 +2324,7 @@ rd[30] <= RAM.DATAOUT30
 rd[31] <= RAM.DATAOUT31
 
 
-|top|led_controller:led_ctrl
+|top_sim|led_controller:led_ctrl
 clk => branch_flag.CLK
 clk => ldr_flag.CLK
 clk => str_flag.CLK
