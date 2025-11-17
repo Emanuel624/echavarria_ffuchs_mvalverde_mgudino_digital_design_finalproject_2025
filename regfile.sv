@@ -8,7 +8,7 @@ module regfile (
 
   // 15 registros físicos (R0..R14). R15 (PC)
   // INICIALIZAR todos a 0
-  logic [31:0] rf [0:14] = '{default: 32'h0};
+  logic [31:0] rf [14:0] = '{default: 32'h0};
 
   // Escritura sincrónica.
   always_ff @(posedge clk) begin

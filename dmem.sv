@@ -8,7 +8,6 @@ module dmem (
   logic [31:0] RAM [0:63];
 
   // Lectura combinacional
-  // Para 64 palabras 6 bits de índice: a[7:2]
   assign rd = RAM[a[31:2]];
 
   // Escritura sincrónica

@@ -13,7 +13,7 @@ module arm(
 
   // Control
   controllerc u_controllerc (
-    clk, reset, Instr[31:0], ALUFlags,
+    clk, reset, Instr[31:12], ALUFlags,
     RegSrc, RegWrite, ImmSrc,
     ALUSrc, ALUControl,
     MemWrite, MemtoReg, PCSrc

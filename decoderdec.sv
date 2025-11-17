@@ -11,6 +11,7 @@ module decoderdec (
 
   logic [9:0] controls;
   logic       Branch, ALUOp;
+  
 
   // -----------------------
   // Decoder

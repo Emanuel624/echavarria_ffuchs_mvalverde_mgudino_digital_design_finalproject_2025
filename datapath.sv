@@ -32,14 +32,19 @@ module datapath (
   mux2  #(.WIDTH(4))  ra1mux (Instr[19:16], 4'b1111,      RegSrc[0], RA1);
   mux2  #(.WIDTH(4))  ra2mux (Instr[3:0],   Instr[15:12], RegSrc[1], RA2);
 
+  // CORRECCION IMPORTANTE: El mux debe estar ANTES del regfile
+  // Para que LDR funcione, el regfile debe recibir Result (no ALUResult)
+  // Result = ALUResult cuando MemtoReg=0 (operaciones normales)
+  // Result = ReadData cuando MemtoReg=1 (LDR)
+  mux2  #(.WIDTH(32)) resmux (ALUResult, ReadData, MemtoReg, Result);
+
   // rf: (clk, we, ra1, ra2, wa, wd, r15, rd1, rd2)
   regfile rf (
     clk, RegWrite, RA1, RA2,
-    Instr[15:12], ALUResult, PCPlus8,
+    Instr[15:12], Result, PCPlus8,
     SrcA, WriteData
   );
 
-  mux2  #(.WIDTH(32)) resmux (ALUResult, ReadData, MemtoReg, Result);
   extend              ext    (Instr[23:0], ImmSrc, ExtImm);
 
   // -----------------------

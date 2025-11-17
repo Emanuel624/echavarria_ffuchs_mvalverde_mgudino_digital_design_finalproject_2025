@@ -2,7 +2,7 @@
 module controllerc (
   input  logic        clk,
   input  logic        reset,
-  input  logic [31:0] Instr,      // pasa la instrucción completa
+  input  logic [31:12] Instr,      // pasa la instrucción completa
   input  logic [3:0]  ALUFlags,
 
   output logic [1:0]  RegSrc,
