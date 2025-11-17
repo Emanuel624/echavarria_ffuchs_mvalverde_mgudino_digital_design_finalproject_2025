@@ -1,13 +1,38 @@
+// =========================================================
+// IMEM - Memoria de instrucciones
+// Usa memoria inferida en simulación, ROM IP en síntesis
+// =========================================================
 module imem (
-  input  logic [31:0] a,
-  output logic [31:0] rd
+  input  logic        clk,    // Reloj (solo para ROM IP en síntesis)
+  input  logic [31:0] a,      // Dirección del PC (32 bits)
+  output logic [31:0] rd      // Instrucción leída
 );
-  logic [31:0] RAM [0:63];
 
+`ifdef SIMULATION
+  // =====================================================
+  // SIMULACIÓN: Usar memoria inferida (más rápido)
+  // =====================================================
+  logic [31:0] ROM [0:255];
+  
   initial begin
-    $readmemh("C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/memfile.dat", RAM);
+    $readmemh("program.mif", ROM);
   end
+  
+  // Lectura combinacional
+  assign rd = ROM[a[9:2]];
 
-  assign rd = RAM[a[31:2]];
+`else
+  // =====================================================
+  // SÍNTESIS: Usar ROM del IP Catalog
+  // =====================================================
+  wire [7:0] rom_address;
+  assign rom_address = a[9:2];
+  
+  rom rom_inst (
+    .address(rom_address),
+    .clock(clk),
+    .q(rd)
+  );
+`endif
 
-endmodule
+endmodule 	

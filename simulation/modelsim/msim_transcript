@@ -10,182 +10,182 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/rom.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:15:41 on Nov 17,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/rom.v 
+# -- Compiling module rom
+# 
+# Top level modules:
+# 	rom
+# End time: 02:15:41 on Nov 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/arm.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:13 on Nov 16,2025
+# Start time: 02:15:41 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/arm.sv 
 # -- Compiling module arm
 # 
 # Top level modules:
 # 	arm
-# End time: 16:48:13 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:41 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/controllerc.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:13 on Nov 16,2025
+# Start time: 02:15:42 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/controllerc.sv 
 # -- Compiling module controllerc
 # 
 # Top level modules:
 # 	controllerc
-# End time: 16:48:13 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:42 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/decoderdec.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:13 on Nov 16,2025
+# Start time: 02:15:42 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/decoderdec.sv 
 # -- Compiling module decoderdec
 # 
 # Top level modules:
 # 	decoderdec
-# End time: 16:48:13 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:42 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/condlogic.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:13 on Nov 16,2025
+# Start time: 02:15:42 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/condlogic.sv 
 # -- Compiling module condlogic
 # -- Compiling module condcheck
 # 
 # Top level modules:
 # 	condlogic
-# End time: 16:48:13 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:42 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:13 on Nov 16,2025
+# Start time: 02:15:42 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/datapath.sv 
 # -- Compiling module datapath
 # 
 # Top level modules:
 # 	datapath
-# End time: 16:48:13 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:42 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/regfile.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:13 on Nov 16,2025
+# Start time: 02:15:42 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/regfile.sv 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 16:48:13 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:42 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/adder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:13 on Nov 16,2025
+# Start time: 02:15:42 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/adder.sv 
 # -- Compiling module adder
 # 
 # Top level modules:
 # 	adder
-# End time: 16:48:14 on Nov 16,2025, Elapsed time: 0:00:01
+# End time: 02:15:42 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/extend.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:14 on Nov 16,2025
+# Start time: 02:15:42 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/extend.sv 
 # -- Compiling module extend
 # 
 # Top level modules:
 # 	extend
-# End time: 16:48:14 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:42 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/flopr.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:14 on Nov 16,2025
+# Start time: 02:15:43 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/flopr.sv 
 # -- Compiling module flopr
 # 
 # Top level modules:
 # 	flopr
-# End time: 16:48:14 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:43 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/flopenr.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:14 on Nov 16,2025
+# Start time: 02:15:43 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/flopenr.sv 
 # -- Compiling module flopenr
 # 
 # Top level modules:
 # 	flopenr
-# End time: 16:48:14 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:43 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/mux2.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:14 on Nov 16,2025
+# Start time: 02:15:43 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/mux2.sv 
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
-# End time: 16:48:14 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:43 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/dmem.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:14 on Nov 16,2025
+# Start time: 02:15:43 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/dmem.sv 
 # -- Compiling module dmem
 # 
 # Top level modules:
 # 	dmem
-# End time: 16:48:14 on Nov 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:14 on Nov 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv 
-# -- Compiling module alu
-# 
-# Top level modules:
-# 	alu
-# End time: 16:48:15 on Nov 16,2025, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/led_controller.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:15 on Nov 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/led_controller.sv 
-# -- Compiling module led_controller
-# 
-# Top level modules:
-# 	led_controller
-# End time: 16:48:15 on Nov 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top_sim.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:15 on Nov 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top_sim.sv 
-# -- Compiling module top_sim
-# 
-# Top level modules:
-# 	top_sim
-# End time: 16:48:15 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:43 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:15 on Nov 16,2025
+# Start time: 02:15:43 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv 
 # -- Compiling module imem
 # 
 # Top level modules:
 # 	imem
-# End time: 16:48:15 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:43 on Nov 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:15:43 on Nov 17,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 02:15:43 on Nov 17,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top_sim.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:15:43 on Nov 17,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top_sim.sv 
+# -- Compiling module top_sim
+# 
+# Top level modules:
+# 	top_sim
+# End time: 02:15:43 on Nov 17,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:48:15 on Nov 16,2025
+# Start time: 02:15:43 on Nov 17,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv 
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 16:48:15 on Nov 16,2025, Elapsed time: 0:00:00
+# End time: 02:15:44 on Nov 17,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  testbench
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 16:48:15 on Nov 16,2025
+# Start time: 02:15:44 on Nov 17,2025
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.top_sim
@@ -203,8 +203,12 @@
 # Loading work.extend
 # Loading work.alu
 # Loading work.imem
+# Loading work.rom
+# Loading altera_mf_ver.altsyncram
 # Loading work.dmem
-# Loading work.led_controller
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # 
 # add wave *
 # view structure
@@ -213,228 +217,55 @@
 # .main_pane.objects.interior.cs.body.tree
 # run -all
 # 
-# ========================================
-# CICLO 1
-# ========================================
-# PC     = 0x00000004
-# Instr  = 0xe2801007
 # 
-# --- CAMPOS DE INSTRUCCION ---
-# Cond[31:28]   = 0xe (1110)
-# Op[27:26]     = 0b00
-# Funct[25:20]  = 0b101000
-# Rn[19:16]     = R0
-# Rd[15:12]     = R1
-# Imm12[11:0]   = 0x007 (7)
+# ╔══════════════════════════════════════════════════════════╗
+# ║         REPORTE FINAL - PROCESADOR ARM                  ║
+# ╚══════════════════════════════════════════════════════════╝
 # 
-# --- SENALES DEL DECODER ---
-# RegSrc    = 00
-# ImmSrc    = 00
-# ALUSrc    = 1
-# MemtoReg  = 0
-# ALUControl= 00
+# REGISTROS:
+# ──────────
+#   R0  = 0x00000000 (0)
+#   R1  = 0x00000007 (7)
+#   R2  = 0x00000007 (7)
+#   PC  = 0x00000010
 # 
-# --- SENALES ANTES DE CONDLOGIC ---
-# RegW (antes)  = 1
-# MemW (antes)  = 0
-# PCS  (antes)  = 0
+# MEMORIA:
+# ────────
+#   Dirección física 100 → Índice RAM[25]
+#   RAM[25] = 0x00000007 (7)
 # 
-# --- LOGICA CONDICIONAL ---
-# Flags[NZCV]   = 0000
-# CondEx        = 1
-# FlagW         = 00
+# ╔══════════════════════════════════════════════════════════╗
+# ║                   VERIFICACIONES                         ║
+# ╠══════════════════════════════════════════════════════════╣
+# ║  ✓ TEST 1: R0 = 0                                 PASS  ║
+# ║  ✓ TEST 2: R1 = 7                                 PASS  ║
+# ║  ✓ TEST 3: R2 = 7 (LDR funcional)                 PASS  ║
+# ║  ✓ TEST 4: RAM[25] = 7 (STR funcional)            PASS  ║
+# ╚══════════════════════════════════════════════════════════╝
 # 
-# --- SENALES FINALES (DESPUES DE CONDLOGIC) ---
-# RegWrite      = 1
-# MemWrite      = 0
-# PCSrc         = 0
+# ╔══════════════════════════════════════════════════════════╗
+# ║                                                          ║
+# ║           ✓✓✓  TODAS LAS PRUEBAS PASARON  ✓✓✓          ║
+# ║                                                          ║
+# ║  Instrucciones ejecutadas correctamente:                ║
+# ║    • MOV R0, #0                                          ║
+# ║    • ADD R1, R0, #7                                      ║
+# ║    • STR R1, [R0, #100]                                  ║
+# ║    • LDR R2, [R0, #100]                                  ║
+# ║    • BRANCH (loop)                                       ║
+# ║                                                          ║
+# ║  PROCESADOR ARM CON ROM IP: FUNCIONAL ✓                 ║
+# ║                                                          ║
+# ╚══════════════════════════════════════════════════════════╝
 # 
-# --- DATAPATH ---
-# ExtImm    = 0x00000007 (7)
-# SrcA      = 0x00000000
-# SrcB      = 0x00000007
-# ALUResult = 0x00000007
-# ALUFlags  = 0000
-# WriteData = 0x00000000 (0)
+# NOTA IMPORTANTE:
+# ─────────────────
+# Dirección de memoria 100 (0x64) se mapea a:
+#   Índice = Dirección / 4 = 100 / 4 = 25
+# Por eso verificamos RAM[25], no RAM[100]
 # 
-# --- REGISTROS ---
-# R0 = 0x00000000
-# R1 = 0x00000000
-# R2 = 0x00000000
-# 
-# --- IDENTIFICACION ---
-# >>> ADD R1, R0, #7
-# 
-# ========================================
-# CICLO 2
-# ========================================
-# PC     = 0x00000008
-# Instr  = 0xe5801064
-# 
-# --- CAMPOS DE INSTRUCCION ---
-# Cond[31:28]   = 0xe (1110)
-# Op[27:26]     = 0b01
-# Funct[25:20]  = 0b011000
-# Rn[19:16]     = R0
-# Rd[15:12]     = R1
-# Imm12[11:0]   = 0x064 (100)
-# 
-# --- SENALES DEL DECODER ---
-# RegSrc    = 10
-# ImmSrc    = 01
-# ALUSrc    = 1
-# MemtoReg  = 1
-# ALUControl= 00
-# 
-# --- SENALES ANTES DE CONDLOGIC ---
-# RegW (antes)  = 0
-# MemW (antes)  = 1
-# PCS  (antes)  = 0
-# 
-# --- LOGICA CONDICIONAL ---
-# Flags[NZCV]   = 0000
-# CondEx        = 1
-# FlagW         = 00
-# 
-# --- SENALES FINALES (DESPUES DE CONDLOGIC) ---
-# RegWrite      = 0
-# MemWrite      = 1
-# PCSrc         = 0
-# 
-# --- DATAPATH ---
-# ExtImm    = 0x00000064 (100)
-# SrcA      = 0x00000000
-# SrcB      = 0x00000064
-# ALUResult = 0x00000064
-# ALUFlags  = 0000
-# WriteData = 0x00000007 (7)
-# 
-# --- REGISTROS ---
-# R0 = 0x00000000
-# R1 = 0x00000007
-# R2 = 0x00000000
-# 
-# --- IDENTIFICACION ---
-# >>> STR R1, [R0, #100]
-# 
-# --- ACCESO A MEMORIA ---
-# Direccion calculada = 100 (0x00000064)
-# Operacion: STORE (STR)
-# 
-# ========================================
-# CICLO 3
-# ========================================
-# PC     = 0x0000000c
-# Instr  = 0xe5902064
-# 
-# --- CAMPOS DE INSTRUCCION ---
-# Cond[31:28]   = 0xe (1110)
-# Op[27:26]     = 0b01
-# Funct[25:20]  = 0b011001
-# Rn[19:16]     = R0
-# Rd[15:12]     = R2
-# Imm12[11:0]   = 0x064 (100)
-# 
-# --- SENALES DEL DECODER ---
-# RegSrc    = 00
-# ImmSrc    = 01
-# ALUSrc    = 1
-# MemtoReg  = 1
-# ALUControl= 00
-# 
-# --- SENALES ANTES DE CONDLOGIC ---
-# RegW (antes)  = 1
-# MemW (antes)  = 0
-# PCS  (antes)  = 0
-# 
-# --- LOGICA CONDICIONAL ---
-# Flags[NZCV]   = 0000
-# CondEx        = 1
-# FlagW         = 00
-# 
-# --- SENALES FINALES (DESPUES DE CONDLOGIC) ---
-# RegWrite      = 1
-# MemWrite      = 0
-# PCSrc         = 0
-# 
-# --- DATAPATH ---
-# ExtImm    = 0x00000064 (100)
-# SrcA      = 0x00000000
-# SrcB      = 0x00000064
-# ALUResult = 0x00000064
-# ALUFlags  = 0000
-# WriteData = 0x00000000 (0)
-# 
-# --- REGISTROS ---
-# R0 = 0x00000000
-# R1 = 0x00000007
-# R2 = 0x00000000
-# 
-# --- IDENTIFICACION ---
-# >>> LDR R2, [R0, #100]
-# 
-# --- ACCESO A MEMORIA ---
-# Direccion calculada = 100 (0x00000064)
-# Operacion: LOAD (LDR)
-# 
-# ========================================
-# CICLO 4
-# ========================================
-# PC     = 0x00000010
-# Instr  = 0xeafffffc
-# 
-# --- CAMPOS DE INSTRUCCION ---
-# Cond[31:28]   = 0xe (1110)
-# Op[27:26]     = 0b10
-# Funct[25:20]  = 0b101111
-# Rn[19:16]     = R15
-# Rd[15:12]     = R15
-# Imm12[11:0]   = 0xffc (4092)
-# 
-# --- SENALES DEL DECODER ---
-# RegSrc    = 01
-# ImmSrc    = 10
-# ALUSrc    = 1
-# MemtoReg  = 0
-# ALUControl= 00
-# 
-# --- SENALES ANTES DE CONDLOGIC ---
-# RegW (antes)  = 0
-# MemW (antes)  = 0
-# PCS  (antes)  = 1
-# 
-# --- LOGICA CONDICIONAL ---
-# Flags[NZCV]   = 0000
-# CondEx        = 1
-# FlagW         = 00
-# 
-# --- SENALES FINALES (DESPUES DE CONDLOGIC) ---
-# RegWrite      = 0
-# MemWrite      = 0
-# PCSrc         = 1
-# 
-# --- DATAPATH ---
-# ExtImm    = 0xfffffff0 (4294967280)
-# SrcA      = 0x00000018
-# SrcB      = 0xfffffff0
-# ALUResult = 0x00000008
-# ALUFlags  = 0010
-# WriteData = 0x00000000 (0)
-# 
-# --- REGISTROS ---
-# R0 = 0x00000000
-# R1 = 0x00000007
-# R2 = 0x00000007
-# 
-# --- IDENTIFICACION ---
-# >>> BRANCH (loop infinito)
-# 
-# 
-# *** BRANCH DETECTADO - TERMINANDO ***
-# 
-# ** Note: $stop    : C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv(113)
-#    Time: 115 ps  Iteration: 0  Instance: /testbench
-# Break in Module testbench at C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv line 113
-step
-# End time: 17:09:30 on Nov 16,2025, Elapsed time: 0:21:15
+# ** Note: $stop    : C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv(32)
+#    Time: 272 ps  Iteration: 0  Instance: /testbench
+# Break in Module testbench at C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv line 32
+# End time: 02:15:55 on Nov 17,2025, Elapsed time: 0:00:11
 # Errors: 0, Warnings: 0

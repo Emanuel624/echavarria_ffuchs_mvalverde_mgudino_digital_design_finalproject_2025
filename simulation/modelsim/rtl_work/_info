@@ -11,7 +11,7 @@ cModel Technology
 Z0 dC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/simulation/modelsim
 vadder
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1763333294
+Z2 !s110 1763367342
 !i10b 1
 !s100 b>`T_j1Tz2ho_HME94<Y]1
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -22,13 +22,13 @@ R0
 Z5 w1762192991
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/adder.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/adder.sv
-!i122 6
+!i122 7
 L0 2 8
 Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1763333293.000000
+Z7 !s108 1763367342.000000
 !s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/adder.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/adder.sv|
 !i113 1
@@ -37,7 +37,7 @@ Z9 !s92 -sv -work work {+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/P
 Z10 tCvgOpt 0
 valu
 R1
-Z11 !s110 1763333295
+Z11 !s110 1763367343
 !i10b 1
 !s100 zN;M_^A[fZ[eX`MHGmnJT1
 R3
@@ -48,13 +48,13 @@ R0
 R5
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv
-!i122 12
+!i122 14
 L0 2 64
 R6
 r1
 !s85 0
 31
-Z12 !s108 1763333294.000000
+Z12 !s108 1763367343.000000
 !s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv|
 !i113 1
@@ -63,7 +63,7 @@ R9
 R10
 varm
 R1
-Z13 !s110 1763333293
+Z13 !s110 1763367341
 !i10b 1
 !s100 9dh6Ehd2GmiADlMRi7?h_2
 R3
@@ -74,13 +74,13 @@ R0
 w1763331410
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/arm.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/arm.sv
-!i122 0
+!i122 1
 L0 1 32
 R6
 r1
 !s85 0
 31
-R7
+Z14 !s108 1763367341.000000
 !s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/arm.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/arm.sv|
 !i113 1
@@ -89,7 +89,7 @@ R9
 R10
 vcondcheck
 R1
-R13
+R2
 !i10b 1
 !s100 zhC?KCPNSJNP2JR7zUVa@1
 R3
@@ -97,25 +97,25 @@ Ic3cBb?Ag_i@`1AR0?R99n2
 R4
 S1
 R0
-Z14 w1763331412
-Z15 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/condlogic.sv
-Z16 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/condlogic.sv
-!i122 3
+Z15 w1763331412
+Z16 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/condlogic.sv
+Z17 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/condlogic.sv
+!i122 4
 L0 34 33
 R6
 r1
 !s85 0
 31
 R7
-Z17 !s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/condlogic.sv|
-Z18 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/condlogic.sv|
+Z18 !s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/condlogic.sv|
+Z19 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/condlogic.sv|
 !i113 1
 R8
 R9
 R10
 vcondlogic
 R1
-R13
+R2
 !i10b 1
 !s100 ImX5KCN;VC^CRdBMY<N2^1
 R3
@@ -123,25 +123,25 @@ I96Fkf9VYYin1iVP=@OWLT0
 R4
 S1
 R0
-R14
 R15
 R16
-!i122 3
+R17
+!i122 4
 L0 4 26
 R6
 r1
 !s85 0
 31
 R7
-R17
 R18
+R19
 !i113 1
 R8
 R9
 R10
 vcontrollerc
 R1
-R13
+R2
 !i10b 1
 !s100 LZC5mE:mJ8m0BUmV^k:6e0
 R3
@@ -152,7 +152,7 @@ R0
 w1763331411
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/controllerc.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/controllerc.sv
-!i122 1
+!i122 2
 L0 2 38
 R6
 r1
@@ -167,7 +167,7 @@ R9
 R10
 vdatapath
 R1
-R13
+R2
 !i10b 1
 !s100 b7^ENJKz63Ol[Uo@[i27a0
 R3
@@ -178,7 +178,7 @@ R0
 w1763333277
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/datapath.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/datapath.sv
-!i122 4
+!i122 5
 L0 1 63
 R6
 r1
@@ -193,7 +193,7 @@ R9
 R10
 vdecoderdec
 R1
-R13
+R2
 !i10b 1
 !s100 TYWLME3DV?=9FIeF:3DY_1
 R3
@@ -201,10 +201,10 @@ I=@l4:_c7XFd6HKPEYXX0b3
 R4
 S1
 R0
-R14
+R15
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/decoderdec.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/decoderdec.sv
-!i122 2
+!i122 3
 L0 2 82
 R6
 r1
@@ -219,19 +219,19 @@ R9
 R10
 vdmem
 R1
-R2
+R11
 !i10b 1
-!s100 c`H`I]e852XXM:IOI8f]g2
+!s100 Yl?G82e;B>CiYMZCliLjh0
 R3
-I3H08451iUUV0PnE7G2TUY0
+Io6gfbR8>c2GZa3XzQaW7L3
 R4
 S1
 R0
-w1762526230
+w1763356083
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/dmem.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/dmem.sv
-!i122 11
-L0 1 17
+!i122 12
+L0 6 38
 R6
 r1
 !s85 0
@@ -256,13 +256,13 @@ R0
 w1762508967
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/extend.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/extend.sv
-!i122 7
+!i122 8
 L0 1 24
 R6
 r1
 !s85 0
 31
-R12
+R7
 !s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/extend.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/extend.sv|
 !i113 1
@@ -271,7 +271,7 @@ R9
 R10
 vflopenr
 R1
-R2
+R11
 !i10b 1
 !s100 mHaAbZ1=Ze0jWfLUa9R]c1
 R3
@@ -282,7 +282,7 @@ R0
 R5
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/flopenr.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/flopenr.sv
-!i122 9
+!i122 10
 L0 2 15
 R6
 r1
@@ -297,7 +297,7 @@ R9
 R10
 vflopr
 R1
-R2
+R11
 !i10b 1
 !s100 9e]_^`?2U::bnETXOdZEN0
 R3
@@ -308,7 +308,7 @@ R0
 R5
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/flopr.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/flopr.sv
-!i122 8
+!i122 9
 L0 2 14
 R6
 r1
@@ -325,57 +325,31 @@ vimem
 R1
 R11
 !i10b 1
-!s100 g>UID7z6JT_`F=B@jgY8N3
+!s100 VB>K`cBGVgeW4K8Tn>[P32
 R3
-I@0TC9E_LICWcJB_>^NV:_1
+ImlD;^_JC30F:moc=Jk5:90
 R4
 S1
 R0
-w1762526231
+w1763364286
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv
-!i122 15
-L0 1 13
+!i122 13
+L0 5 34
 R6
 r1
 !s85 0
 31
-Z19 !s108 1763333295.000000
+R12
 !s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv|
 !i113 1
 R8
 R9
 R10
-vled_controller
-R1
-R11
-!i10b 1
-!s100 >J8:@8RRfAhn`W[ZAc;f`0
-R3
-IcGA2?UD2z]mO;8N^;Z_GX1
-R4
-S1
-R0
-w1762205977
-8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/led_controller.sv
-FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/led_controller.sv
-!i122 13
-L0 1 64
-R6
-r1
-!s85 0
-31
-R19
-!s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/led_controller.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/led_controller.sv|
-!i113 1
-R8
-R9
-R10
 vmux2
 R1
-R2
+R11
 !i10b 1
 !s100 6[h8HI75]2cFZN2nXa9Fi0
 R3
@@ -386,7 +360,7 @@ R0
 R5
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/mux2.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/mux2.sv
-!i122 10
+!i122 11
 L0 2 9
 R6
 r1
@@ -401,7 +375,7 @@ R9
 R10
 vregfile
 R1
-R13
+R2
 !i10b 1
 !s100 ljSMcXKnJoJFS`PcUCOk51
 R3
@@ -412,8 +386,8 @@ R0
 w1763331413
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/regfile.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/regfile.sv
-!i122 5
-Z20 L0 1 31
+!i122 6
+L0 1 31
 R6
 r1
 !s85 0
@@ -425,26 +399,52 @@ R7
 R8
 R9
 R10
-vtestbench
+vrom
 R1
-R11
+R13
 !i10b 1
-!s100 48X@4]9NO[ElTgPo_gg5O3
+!s100 3>6iH`9GP:iHegOJccj2e1
 R3
-I7hY[h`HDz>gBCfA`cG:f:0
+IDoRF62^EcL_n`[_DfYiZ=0
 R4
 S1
 R0
-w1763332763
-8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv
-FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv
-!i122 16
-L0 1 125
+w1763363219
+8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/rom.v
+FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/rom.v
+!i122 0
+L0 40 61
 R6
 r1
 !s85 0
 31
-R19
+R14
+!s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/rom.v|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/rom.v|
+!i113 1
+R8
+R9
+R10
+vtestbench
+R1
+!s110 1763367344
+!i10b 1
+!s100 ^^cfcn8zBHoFG2oTQfeZ20
+R3
+Ih6V3:G8SB97z3nfYnzVaW1
+R4
+S1
+R0
+w1763363687
+8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv
+FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv
+!i122 16
+L0 3 137
+R6
+r1
+!s85 0
+31
+R12
 !s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/testbench.sv|
 !i113 1
@@ -455,22 +455,22 @@ vtop_sim
 R1
 R11
 !i10b 1
-!s100 mb>lE5l;80aM5FUg4l`H32
+!s100 ^mOZjJ3Y`Xg]EbUl4?52Q0
 R3
-IJoK?0XI>Z<`cL3=@g<Si90
+IFX<7[Eah>THgGHPTC5Pfd2
 R4
 S1
 R0
-w1762358078
+w1763353312
 8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top_sim.sv
 FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top_sim.sv
-!i122 14
-R20
+!i122 15
+L0 7 30
 R6
 r1
 !s85 0
 31
-R19
+R12
 !s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top_sim.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top_sim.sv|
 !i113 1

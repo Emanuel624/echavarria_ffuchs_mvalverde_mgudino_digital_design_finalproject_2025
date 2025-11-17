@@ -1,9 +1,3 @@
-// Directiva timescale NECESARIA para compatibilidad con ROM IP
-`timescale 1ps / 1ps
-
-// Top module para SIMULACION con ROM del IP Catalog
-// Usa el reloj directamente para simulación rápida
-
 module top_sim (
   input  logic        clk,
   input  logic        reset,
@@ -15,22 +9,23 @@ module top_sim (
   logic [31:0] PC, Instr, ReadData, ALUResult;
 
   // =====================================================
-  // PROCESADOR ARM + MEMORIAS (sin divisor de reloj)
+  // Instantiate processor and memories
+  // SIN DIVISOR DE RELOJ - para simulación rápida
   // =====================================================
-  
-  // Procesador ARM
   arm  arm  (clk, reset, PC, Instr, MemWrite, ALUResult, WriteData, ReadData);
-  
-  // IMEM con reloj (usa ROM del IP Catalog a través del wrapper)
-  imem imem (clk, PC, Instr);
-  
-  // DMEM (RAM)
+  imem imem (PC, Instr);
   dmem dmem (clk, MemWrite, ALUResult, WriteData, ReadData);
 
-  // LED simple
-  assign LED = Instr[7:0];
+  // Instantiate LED controller
+  led_controller led_ctrl (
+    .clk(clk),
+    .reset(reset),
+    .Instr(Instr),
+    .PC(PC),
+    .LED(LED)
+  );
 
-  // Asignar ALUResult a DataAdr para observabilidad
+  // Asignar ALUResult a DataAdr para que el testbench pueda verlo
   assign DataAdr = ALUResult;
 
 endmodule
