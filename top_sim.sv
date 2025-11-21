@@ -1,8 +1,9 @@
-// Directiva timescale NECESARIA para compatibilidad con ROM IP
 `timescale 1ps / 1ps
 
-// Top module para SIMULACION con ROM del IP Catalog
-// Usa el reloj directamente para simulación rápida
+// =========================================================
+// TOP BÁSICO - Sin periféricos
+// Solo procesador + ROM + RAM para verificar ejecución
+// =========================================================
 
 module top_sim (
   input  logic        clk,
@@ -12,25 +13,47 @@ module top_sim (
   output logic        MemWrite,
   output logic [7:0]  LED
 );
+
   logic [31:0] PC, Instr, ReadData, ALUResult;
 
   // =====================================================
-  // PROCESADOR ARM + MEMORIAS (sin divisor de reloj)
+  // PROCESADOR ARM
   // =====================================================
-  
-  // Procesador ARM
-  arm  arm  (clk, reset, PC, Instr, MemWrite, ALUResult, WriteData, ReadData);
-  
-  // IMEM con reloj (usa ROM del IP Catalog a través del wrapper)
-  imem imem (clk, PC, Instr);
-  
-  // DMEM (RAM)
-  dmem dmem (clk, MemWrite, ALUResult, WriteData, ReadData);
+  arm arm (
+    .clk(clk),
+    .reset(reset),
+    .PC(PC),
+    .Instr(Instr),
+    .MemWrite(MemWrite),
+    .ALUResult(ALUResult),
+    .WriteData(WriteData),
+    .ReadData(ReadData)
+  );
 
-  // LED simple
-  assign LED = Instr[7:0];
+  // =====================================================
+  // MEMORIA DE INSTRUCCIONES (ROM)
+  // =====================================================
+  imem imem (
+    .clk(clk),
+    .a(PC),
+    .rd(Instr)
+  );
 
-  // Asignar ALUResult a DataAdr para observabilidad
+  // =====================================================
+  // MEMORIA DE DATOS (RAM)
+  // =====================================================
+  dmem dmem (
+    .clk(clk),
+    .we(MemWrite),
+    .a(ALUResult),
+    .wd(WriteData),
+    .rd(ReadData)
+  );
+
+  // =====================================================
+  // SALIDAS
+  // =====================================================
   assign DataAdr = ALUResult;
+  assign LED = Instr[7:0];
 
 endmodule
