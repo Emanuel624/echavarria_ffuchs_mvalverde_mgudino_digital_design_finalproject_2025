@@ -1,4 +1,3 @@
-
 module decoderdec (
   input  logic [1:0] Op,
   input  logic [5:0] Funct,
@@ -6,7 +5,8 @@ module decoderdec (
   output logic [1:0] FlagW,
   output logic       PCS, RegW, MemW,
   output logic       MemtoReg, ALUSrc,
-  output logic [1:0] ImmSrc, RegSrc, ALUControl
+  output logic [1:0] ImmSrc, RegSrc, 
+  output logic [2:0] ALUControl
 );
 
   logic [9:0] controls;
@@ -41,37 +41,40 @@ module decoderdec (
 
       // Default
       default: begin
-        controls = 10'b0000000000; // 10'bxxxxxxxxxx para sim-only
+        controls = 10'b0000000000;
       end
     endcase
   end
 
   // Desempaquetado de la palabra de control
   // {RegSrc[1:0], ImmSrc[1:0], ALUSrc, MemtoReg, RegW, MemW, Branch, ALUOp}
+  // IMPORTANTE: ALUControl NO viene de aquí, viene del ALU Decoder basado en ALUOp y Funct
   assign {RegSrc, ImmSrc, ALUSrc, MemtoReg, RegW, MemW, Branch, ALUOp} = controls;
 
   // -----------------------
-  // ALU Decoder
+  // ALU Decoder (expandido a 3 bits)
   // -----------------------
   always_comb begin
     // valores por defecto
-    ALUControl = 2'b00;     // ADD por defecto
+    ALUControl = 3'b000;     // ADD por defecto
     FlagW      = 2'b00;    
 
     if (ALUOp) begin
       // Cuál DP instruction?
       unique case (Funct[4:1])
-        4'b0100: ALUControl = 2'b00; // ADD
-        4'b0010: ALUControl = 2'b01; // SUB
-        4'b0000: ALUControl = 2'b10; // AND
-        4'b1100: ALUControl = 2'b11; // ORR
-        default: ALUControl = 2'b00; // por seguridad
+        4'b0100: ALUControl = 3'b000; // ADD
+        4'b0010: ALUControl = 3'b001; // SUB
+        4'b0000: ALUControl = 3'b010; // AND
+        4'b1100: ALUControl = 3'b011; // ORR
+        4'b0101: ALUControl = 3'b100; // MUL
+        4'b0110: ALUControl = 3'b101; // DIV
+        default: ALUControl = 3'b000; // por seguridad
       endcase
 
       // Actualización de flags si S bit está en 1
-      // (C & V solo para aritméticas ADD/SUB, distinguir ALUControl)
+      // (C & V solo para aritméticas ADD/SUB)
       FlagW[1] = Funct[0]; // NZ
-      FlagW[0] = Funct[0] & ((ALUControl == 2'b00) || (ALUControl == 2'b01)); // CV
+      FlagW[0] = Funct[0] & ((ALUControl == 3'b000) || (ALUControl == 3'b001)); // CV
     end
   end
 

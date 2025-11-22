@@ -1,4 +1,3 @@
-
 module controllerc (
   input  logic        clk,
   input  logic        reset,
@@ -9,7 +8,7 @@ module controllerc (
   output logic        RegWrite,
   output logic [1:0]  ImmSrc,
   output logic        ALUSrc,
-  output logic [1:0]  ALUControl,
+  output logic [2:0]  ALUControl,
   output logic        MemWrite,
   output logic        MemtoReg,
   output logic        PCSrc
@@ -37,4 +36,3 @@ module controllerc (
   );
 
 endmodule
-

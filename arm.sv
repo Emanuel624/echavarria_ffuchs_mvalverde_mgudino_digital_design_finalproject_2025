@@ -9,7 +9,8 @@ module arm(
 
   logic [3:0] ALUFlags;
   logic       RegWrite, ALUSrc, MemtoReg, PCSrc;
-  logic [1:0] RegSrc, ImmSrc, ALUControl;
+  logic [1:0] RegSrc, ImmSrc;
+  logic [2:0] ALUControl;  // ✅ CORREGIDO: [1:0] → [2:0] para MUL y DIV
 
   // Control
   controllerc u_controllerc (
