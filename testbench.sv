@@ -1,32 +1,13 @@
 `timescale 1ps / 1ps
 
-// =========================================================
-// TESTBENCH PARA PROCESADOR + DMEM HÍBRIDA
-// =========================================================
-
 module testbench();
 
-  // Señales principales
   logic        clk;
   logic        reset;
   logic [31:0] WriteData, DataAdr;
   logic        MemWrite;
   logic [7:0]  LED;
 
-  // =====================================================
-  // DUT - Instancia del top de simulación
-  // Asegúrate que la definición de top_sim sea:
-//  module top_sim (
-//    input  logic        clk,
-//    input  logic        reset,
-//    output logic [31:0] WriteData,
-//    output logic [31:0] DataAdr,
-//    output logic        MemWrite,
-//    output logic [7:0]  LED
-//  );
-//  ...
-//  endmodule
-  // =====================================================
   top_sim dut (
     .clk      (clk),
     .reset    (reset),
@@ -36,14 +17,8 @@ module testbench();
     .LED      (LED)
   );
 
-  // =====================================================
-  // GENERACIÓN DE RELOJ Y RESET
-  // =====================================================
-
-  // Reloj: periodo de 10 ps (100 GHz solo para sim rápida)
   always #5 clk = ~clk;
 
-  // Reset inicial
   initial begin
     clk   = 1'b0;
     reset = 1'b1;
@@ -51,146 +26,71 @@ module testbench();
     reset = 1'b0;
   end
 
-  // =====================================================
-  // MONITOR PRINCIPAL
-  // =====================================================
   initial begin
-    // Esperar a que salga de reset
     wait (!reset);
-
-    // Dar tiempo suficiente para que corra el programa
-    #250;
-
-    // Imprimir reporte
-    print_final_report();
-
-    // Detener simulación
-    $stop;
-  end
-
-  // =====================================================
-  // TASK: REPORTE FINAL
-  // =====================================================
-  task print_final_report();
-    integer test_errors;
-    test_errors = 0;
-
+    
     $display("\n");
     $display("╔══════════════════════════════════════════════════════════╗");
-    $display("║         REPORTE FINAL - PROCESADOR ARM                  ║");
+    $display("║        PRUEBA: LECTURA DE DIFERENTES PALABRAS RAM       ║");
+    $display("║   Las instrucciones LDR ejecutan y leen desde RAM        ║");
     $display("╚══════════════════════════════════════════════════════════╝");
     $display("");
-
-    // -----------------------------------------------------
-    // REGISTROS
-    // -----------------------------------------------------
-    $display("REGISTROS:");
-    $display("──────────");
-    $display("  R0  = 0x%08h (%0d)", dut.arm.u_datapathdp.rf.rf[0], dut.arm.u_datapathdp.rf.rf[0]);
-    $display("  R1  = 0x%08h (%0d)", dut.arm.u_datapathdp.rf.rf[1], dut.arm.u_datapathdp.rf.rf[1]);
-    $display("  R2  = 0x%08h (%0d)", dut.arm.u_datapathdp.rf.rf[2], dut.arm.u_datapathdp.rf.rf[2]);
-    $display("  PC  = 0x%08h\n",      dut.arm.PC);
-
-    // -----------------------------------------------------
-    // MEMORIA
-    // -----------------------------------------------------
-    $display("MEMORIA:");
-    $display("────────");
-    $display("  Dirección física 100 → Índice RAM[25]");
-
-`ifdef SIMULATION
-    // Solo existe el arreglo RAM si se compila con +define+SIMULATION
-    $display("  RAM[25] = 0x%08h (%0d)\n", dut.dmem.RAM[25], dut.dmem.RAM[25]);
-`else
-    $display("  (SIMULATION no definida: no hay acceso directo a RAM[].)\n");
-`endif
-
-    // -----------------------------------------------------
-    // VERIFICACIONES
-    // -----------------------------------------------------
-    $display("╔══════════════════════════════════════════════════════════╗");
-    $display("║                   VERIFICACIONES                         ║");
-    $display("╠══════════════════════════════════════════════════════════╣");
-
-    // Test 1: R0 = 0
-    if (dut.arm.u_datapathdp.rf.rf[0] === 32'h00000000) begin
-      $display("║  ✓ TEST 1: R0 = 0                                 PASS  ║");
-    end else begin
-      $display("║  ✗ TEST 1: R0 = %0d (esperado 0)                  FAIL  ║", 
-               dut.arm.u_datapathdp.rf.rf[0]);
-      test_errors++;
-    end
-
-    // Test 2: R1 = 7
-    if (dut.arm.u_datapathdp.rf.rf[1] === 32'h00000007) begin
-      $display("║  ✓ TEST 2: R1 = 7                                 PASS  ║");
-    end else begin
-      $display("║  ✗ TEST 2: R1 = %0d (esperado 7)                  FAIL  ║", 
-               dut.arm.u_datapathdp.rf.rf[1]);
-      test_errors++;
-    end
-
-    // Test 3: R2 = 7 (LDR desde memoria)
-    if (dut.arm.u_datapathdp.rf.rf[2] === 32'h00000007) begin
-      $display("║  ✓ TEST 3: R2 = 7 (LDR funcional)                 PASS  ║");
-    end else begin
-      $display("║  ✗ TEST 3: R2 = %0d (esperado 7)                  FAIL  ║", 
-               dut.arm.u_datapathdp.rf.rf[2]);
-      test_errors++;
-    end
-
-    // Test 4: RAM[25] = 7 (STR funcional)
-`ifdef SIMULATION
-    if (dut.dmem.RAM[25] === 32'h00000007) begin
-      $display("║  ✓ TEST 4: RAM[25] = 7 (STR funcional)            PASS  ║");
-    end else begin
-      $display("║  ✗ TEST 4: RAM[25] = 0x%08h (esperado 0x00000007) FAIL ║", 
-               dut.dmem.RAM[25]);
-      test_errors++;
-    end
-`else
-    $display("║  ? TEST 4: No se puede verificar RAM[25] sin SIMULATION  ║");
-`endif
-
+    
+    $display("PROGRAMA QUE SE EJECUTA:");
+    $display("─────────────────────────");
+    $display("  MOV R0, #0      → R0 = 0");
+    $display("  LDR R1, [R0]    → R1 = RAM[0] (dirección 0)");
+    $display("  LDR R2, [R0, #4]   → R2 = RAM[1] (dirección 4)");
+    $display("  LDR R3, [R0, #8]   → R3 = RAM[2] (dirección 8)");
+    $display("  LDR R4, [R0, #12]  → R4 = RAM[3] (dirección 12)");
+    $display("  LDR R5, [R0, #16]  → R5 = RAM[4] (dirección 16)");
+    $display("  LDR R6, [R0, #20]  → R6 = RAM[5] (dirección 20)");
+    $display("  BRANCH INFINITO");
+    $display("");
+    
+    $display("VALORES ESPERADOS EN REGISTROS:");
+    $display("─────────────────────────────────");
+    $display("  R1 = 100 (0x00000064)  ← RAM[0]");
+    $display("  R2 = 111 (0x0000006F)  ← RAM[1]");
+    $display("  R3 = 222 (0x000000DE)  ← RAM[2]");
+    $display("  R4 = 333 (0x0000014D)  ← RAM[3]");
+    $display("  R5 = 444 (0x000001BC)  ← RAM[4]");
+    $display("  R6 = 200 (0x000000C8)  ← RAM[5]");
+    $display("");
+    
+    // Esperar a que termine la ejecución de las instrucciones
+    #400;  // Suficiente tiempo para que se ejecuten todas las LDR
+    
+    $display("VALORES LEÍDOS EN REGISTROS:");
+    $display("──────────────────────────────");
+    
+    check_register(1, 32'd100, "R1 (RAM[0])");
+    check_register(2, 32'd111, "R2 (RAM[1])");
+    check_register(3, 32'd222, "R3 (RAM[2])");
+    check_register(4, 32'd333, "R4 (RAM[3])");
+    check_register(5, 32'd444, "R5 (RAM[4])");
+    check_register(6, 32'd200, "R6 (RAM[5])");
+    
+    $display("");
     $display("╚══════════════════════════════════════════════════════════╝");
     $display("");
-
-    // -----------------------------------------------------
-    // RESUMEN GLOBAL
-    // -----------------------------------------------------
-    if (test_errors == 0) begin
-      $display("╔══════════════════════════════════════════════════════════╗");
-      $display("║                                                          ║");
-      $display("║           ✓✓✓  TODAS LAS PRUEBAS PASARON  ✓✓✓          ║");
-      $display("║                                                          ║");
-      $display("║  Instrucciones ejecutadas correctamente:                 ║");
-      $display("║    • MOV R0, #0                                          ║");
-      $display("║    • ADD R1, R0, #7                                      ║");
-      $display("║    • STR R1, [R0, #100]                                  ║");
-      $display("║    • LDR R2, [R0, #100]                                  ║");
-      $display("║    • BRANCH (loop)                                       ║");
-      $display("║                                                          ║");
-      $display("║  PROCESADOR ARM CON DMEM HÍBRIDA: FUNCIONAL ✓           ║");
-      $display("║                                                          ║");
-      $display("╚══════════════════════════════════════════════════════════╝");
+    $stop;
+  end
+  
+  task check_register(input [3:0] reg_num, input [31:0] expected, input string desc);
+    logic [31:0] actual;
+    actual = dut.arm.u_datapathdp.rf.rf[reg_num];
+    
+    $display("%s", desc);
+    $display("  Actual:   0x%08h (%3d)", actual, actual);
+    $display("  Esperado: 0x%08h (%3d)", expected, expected);
+    
+    if (actual === expected) begin
+      $display("  ✓ CORRECTO");
     end else begin
-      $display("╔══════════════════════════════════════════════════════════╗");
-      $display("║           ✗✗✗  %0d ERROR(ES) ENCONTRADO(S)  ✗✗✗         ║", test_errors);
-      $display("╚══════════════════════════════════════════════════════════╝");
+      $display("  ✗ INCORRECTO - Diferencia: %d", actual - expected);
     end
-
     $display("");
-
-    // -----------------------------------------------------
-    // NOTA DE DIRECCIONAMIENTO
-    // -----------------------------------------------------
-    $display("NOTA IMPORTANTE:");
-    $display("─────────────────");
-    $display("Dirección de memoria 100 (0x64) se mapea a:");
-    $display("  Índice = Dirección / 4 = 100 / 4 = 25");
-    $display("Por eso verificamos RAM[25], no RAM[100].");
-    $display("");
-
   endtask
 
 endmodule
