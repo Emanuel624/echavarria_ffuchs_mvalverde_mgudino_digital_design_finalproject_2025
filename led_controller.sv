@@ -3,62 +3,73 @@ module led_controller (
   input  logic        reset,
   input  logic [31:0] Instr,
   input  logic [31:0] PC,
+  input  logic [31:0] ALUResult,
+  input  logic [2:0]  ALUControl,
+  input  logic        RegWrite,
   output logic [7:0]  LED
 );
-  // Contadores/flags para detectar instrucciones
-  logic mov_detected, add_detected, str_detected, ldr_detected, branch_detected;
 
-  // =====================================================
-  // DETECTOR DE INSTRUCCIONES (combinacional)
-  // =====================================================
+  logic is_data_processing;
+  logic is_add_op;
+  logic is_sub_op;
+  logic is_mul_op;
+  logic is_mov_op;
+  
+  assign is_data_processing = (Instr[27:26] == 2'b00);
+  
   always_comb begin
-    mov_detected    = (Instr == 32'hE0400000);  // MOV R0, #0
-    add_detected    = (Instr == 32'hE2801007);  // ADD R1, R0, #7
-    str_detected    = (Instr == 32'hE5801064);  // STR R1, [R0, #100]
-    ldr_detected    = (Instr == 32'hE5902064);  // LDR R2, [R0, #100]
-    branch_detected = (Instr == 32'hEAFFFFFC);  // B .-4
+    is_add_op = 1'b0;
+    is_sub_op = 1'b0;
+    is_mul_op = 1'b0;
+    is_mov_op = 1'b0;
+    
+    case (ALUControl)
+      3'b000: is_add_op = 1'b1;
+      3'b001: is_sub_op = 1'b1;
+      3'b100: is_mul_op = 1'b1;
+      default: is_mov_op = 1'b1;
+    endcase
   end
+  
+  logic add_executed, sub_executed, mul_executed, mov_executed;
+  
+  assign add_executed = is_add_op && RegWrite;
+  assign sub_executed = is_sub_op && RegWrite;
+  assign mul_executed = is_mul_op && RegWrite;
+  assign mov_executed = (Instr[27:26] == 2'b00) && (Instr[25:20] == 6'b001101) && RegWrite;
 
-  // =====================================================
-  // FLIP-FLOPS PARA LATCHEAR EL ESTADO
-  // (Una vez que se ejecuta, el LED se enciende)
-  // =====================================================
-  logic mov_flag, add_flag, str_flag, ldr_flag, branch_flag;
+  logic add_flag, sub_flag, mul_flag, mov_flag, heartbeat;
   
   always_ff @(posedge clk or posedge reset) begin
     if (reset) begin
-      mov_flag    <= 1'b0;
-      add_flag    <= 1'b0;
-      str_flag    <= 1'b0;
-      ldr_flag    <= 1'b0;
-      branch_flag <= 1'b0;
+      add_flag  <= 1'b0;
+      sub_flag  <= 1'b0;
+      mul_flag  <= 1'b0;
+      mov_flag  <= 1'b0;
+      heartbeat <= 1'b0;
     end else begin
-      if (mov_detected)    mov_flag    <= 1'b1;
-      if (add_detected)    add_flag    <= 1'b1;
-      if (str_detected)    str_flag    <= 1'b1;
-      if (ldr_detected)    ldr_flag    <= 1'b1;
-      if (branch_detected) branch_flag <= 1'b1;
+      heartbeat <= ~heartbeat;
+      
+      if (add_executed)  add_flag  <= 1'b1;
+      if (sub_executed)  sub_flag  <= 1'b1;
+      if (mul_executed)  mul_flag  <= 1'b1;
+      if (mov_executed)  mov_flag  <= 1'b1;
     end
   end
 
-  // =====================================================
-  // ASIGNACIÓN A LEDs
-  // =====================================================
-  // LED[0]: MOV ejecutado
-  // LED[1]: ADD ejecutado
-  // LED[2]: STR ejecutado
-  // LED[3]: LDR ejecutado
-  // LED[4]: BRANCH ejecutado
-  // LED[5]: El reloj mismo (parpadea al ritmo del clk que recibe)
-  // LED[6-7]: No se usan
+  logic result_valid;
+  assign result_valid = (ALUResult == 32'd0) || (ALUResult == 32'd7) || (ALUResult == 32'd10) || (ALUResult == 32'd12) || (ALUResult == 32'd17) || (ALUResult == 32'd24);
   
-  assign LED[0] = mov_flag;
-  assign LED[1] = add_flag;
-  assign LED[2] = str_flag;
-  assign LED[3] = ldr_flag;
-  assign LED[4] = branch_flag;
-  assign LED[5] = clk;           // Directamente el reloj que recibe
-  assign LED[6] = 1'b0;          // Apagado
-  assign LED[7] = 1'b0;          // Apagado
+  // =========================================================
+  // MODO DEBUG - LEDs para ver qué pasa internamente
+  // =========================================================
+  assign LED[0] = add_flag;                    // ADD ejecutado
+  assign LED[1] = RegWrite;                    // DEBUG: ¿Está RegWrite en 1?
+  assign LED[2] = ALUControl[0];               // DEBUG: Bit 0 de ALUControl
+  assign LED[3] = ALUControl[1];               // DEBUG: Bit 1 de ALUControl
+  assign LED[4] = ALUControl[2];               // DEBUG: Bit 2 de ALUControl
+  assign LED[5] = heartbeat;                   // Heartbeat (parpadea)
+  assign LED[6] = RegWrite;                    // RegWrite
+  assign LED[7] = is_data_processing;          // Data processing
 
 endmodule

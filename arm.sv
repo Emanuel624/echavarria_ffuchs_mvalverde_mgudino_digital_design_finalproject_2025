@@ -4,13 +4,14 @@ module arm(
   input  logic [31:0] Instr,
   output logic        MemWrite,
   output logic [31:0] ALUResult, WriteData,
-  input  logic [31:0] ReadData
+  input  logic [31:0] ReadData,
+  output logic [2:0]  ALUControl,  // Exportar para led_controller
+  output logic        RegWrite     // Exportar para led_controller
 );
 
   logic [3:0] ALUFlags;
-  logic       RegWrite, ALUSrc, MemtoReg, PCSrc;
+  logic       ALUSrc, MemtoReg, PCSrc;
   logic [1:0] RegSrc, ImmSrc;
-  logic [2:0] ALUControl;  // ✅ CORREGIDO: [1:0] → [2:0] para MUL y DIV
 
   // Control
   controllerc u_controllerc (

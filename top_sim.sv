@@ -2,7 +2,8 @@
 
 // =========================================================
 // TOP BÁSICO - Sin periféricos
-// Solo procesador + ROM + RAM para verificar ejecución
+// Procesador + Memoria Interna (imem y dmem)
+// CORREGIDO: imem NO necesita clk (lectura combinacional)
 // =========================================================
 
 module top_sim (
@@ -31,16 +32,16 @@ module top_sim (
   );
 
   // =====================================================
-  // MEMORIA DE INSTRUCCIONES (ROM)
+  // MEMORIA DE INSTRUCCIONES (INTERNA)
+  // CAMBIO: Removido .clk(clk) porque imem es combinacional
   // =====================================================
   imem imem (
-    .clk(clk),
     .a(PC),
     .rd(Instr)
   );
 
   // =====================================================
-  // MEMORIA DE DATOS (RAM)
+  // MEMORIA DE DATOS (INTERNA)
   // =====================================================
   dmem dmem (
     .clk(clk),

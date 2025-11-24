@@ -8,6 +8,10 @@ module top (
 );
   logic [31:0] PC, Instr, ReadData, ALUResult;
   logic        clk_div;  // Reloj dividido (lento)
+  
+  // Señales adicionales para el led_controller
+  logic [2:0] ALUControl;
+  logic       RegWrite;
 
   // =====================================================
   // DIVISOR DE FRECUENCIA
@@ -25,23 +29,39 @@ module top (
     end
   end
 
-
   // Esto crea un reloj de ~1 Hz (cada instrucción tarda ~1 segundo)
   assign clk_div = clk_counter[24];
 
   // =====================================================
-  // CAMBIO: Usa clk_div en lugar de clk para que sea lento
+  // INSTANCIA DEL PROCESADOR ARM
   // =====================================================
-  arm  arm  (clk_div, reset, PC, Instr, MemWrite, ALUResult, WriteData, ReadData);
+  arm arm_inst (
+    .clk(clk_div), 
+    .reset(reset), 
+    .PC(PC), 
+    .Instr(Instr), 
+    .MemWrite(MemWrite), 
+    .ALUResult(ALUResult), 
+    .WriteData(WriteData), 
+    .ReadData(ReadData),
+    .ALUControl(ALUControl),
+    .RegWrite(RegWrite)
+  );
+  
   imem imem (PC, Instr);
   dmem dmem (clk_div, MemWrite, ALUResult, WriteData, ReadData);
 
-  // Instantiate LED controller
+  // =====================================================
+  // INSTANCIA DEL CONTROLADOR DE LEDs
+  // =====================================================
   led_controller led_ctrl (
-    .clk(clk_div),      // reloj dividido
+    .clk(clk_div),           // reloj dividido
     .reset(reset),
     .Instr(Instr),
     .PC(PC),
+    .ALUResult(ALUResult),   // Resultado del ALU
+    .ALUControl(ALUControl), // Control del ALU (nos dice qué operación se hizo)
+    .RegWrite(RegWrite),     // Flag de escritura en registro
     .LED(LED)
   );
 

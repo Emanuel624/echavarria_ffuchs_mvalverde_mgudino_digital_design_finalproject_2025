@@ -6,14 +6,15 @@ module dmem (
   output logic [31:0] rd
 );
 
-  wire [10:0] ram_address = a[31:2];
-
-  ram ram_inst (
-    .address(ram_address),
-    .clock  (clk),
-    .data   (wd),
-    .wren   (we),
-    .q      (rd)
-  );
+  logic [31:0] RAM[63:0];
+  
+  // Cargar valores iniciales desde archivo
+  initial $readmemh("C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/dmem_init.dat", RAM);
+  
+  assign rd = RAM[a[7:2]];
+  
+  always_ff @(posedge clk)
+    if (we)
+      RAM[a[7:2]] <= wd;
 
 endmodule
