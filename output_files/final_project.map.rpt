@@ -1,5 +1,5 @@
 Analysis & Synthesis report for final_project
-Tue Nov 25 10:52:03 2025
+Tue Nov 25 11:22:08 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -64,7 +64,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 25 10:52:03 2025       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 25 11:22:08 2025       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; final_project                               ;
 ; Top-level Entity Name           ; top                                         ;
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 ; Total pins                      ; 80                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 16                                          ;
+; Total DSP Blocks                ; 20                                          ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
@@ -186,8 +186,8 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
@@ -234,25 +234,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 2333      ;
+; Estimate of Logic utilization (ALMs needed) ; 2363      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 2898      ;
+; Combinational ALUT usage for logic          ; 2964      ;
 ;     -- 7 input functions                    ; 25        ;
-;     -- 6 input functions                    ; 948       ;
-;     -- 5 input functions                    ; 837       ;
-;     -- 4 input functions                    ; 610       ;
-;     -- <=3 input functions                  ; 478       ;
+;     -- 6 input functions                    ; 949       ;
+;     -- 5 input functions                    ; 894       ;
+;     -- 4 input functions                    ; 615       ;
+;     -- <=3 input functions                  ; 481       ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 2535      ;
 ;                                             ;           ;
 ; I/O pins                                    ; 80        ;
 ;                                             ;           ;
-; Total DSP Blocks                            ; 16        ;
+; Total DSP Blocks                            ; 20        ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 2535      ;
-; Total fan-out                               ; 22607     ;
-; Average fan-out                             ; 4.03      ;
+; Total fan-out                               ; 22957     ;
+; Average fan-out                             ; 4.04      ;
 +---------------------------------------------+-----------+
 
 
@@ -261,15 +261,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                             ; Entity Name         ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top                                            ; 2898 (0)            ; 2535 (0)                  ; 0                 ; 16         ; 80   ; 0            ; |top                                                                                                                                            ; top                 ; work         ;
-;    |arm:arm_inst|                               ; 2756 (0)            ; 487 (0)                   ; 0                 ; 16         ; 0    ; 0            ; |top|arm:arm_inst                                                                                                                               ; arm                 ; work         ;
+; |top                                            ; 2964 (0)            ; 2535 (0)                  ; 0                 ; 20         ; 80   ; 0            ; |top                                                                                                                                            ; top                 ; work         ;
+;    |arm:arm_inst|                               ; 2822 (0)            ; 487 (0)                   ; 0                 ; 20         ; 0    ; 0            ; |top|arm:arm_inst                                                                                                                               ; arm                 ; work         ;
 ;       |controllerc:u_controllerc|               ; 20 (0)              ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|controllerc:u_controllerc                                                                                                     ; controllerc         ; work         ;
 ;          |condlogic:u_condlogic|                ; 14 (4)              ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|controllerc:u_controllerc|condlogic:u_condlogic                                                                               ; condlogic           ; work         ;
 ;             |flopenr:flagreg1|                  ; 10 (10)             ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|controllerc:u_controllerc|condlogic:u_condlogic|flopenr:flagreg1                                                              ; flopenr             ; work         ;
 ;          |decoderdec:u_decoderdec|              ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|controllerc:u_controllerc|decoderdec:u_decoderdec                                                                             ; decoderdec          ; work         ;
-;       |datapath:u_datapathdp|                   ; 2736 (0)            ; 486 (0)                   ; 0                 ; 16         ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp                                                                                                         ; datapath            ; work         ;
+;       |datapath:u_datapathdp|                   ; 2802 (0)            ; 486 (0)                   ; 0                 ; 20         ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp                                                                                                         ; datapath            ; work         ;
 ;          |adder:pcadd1|                         ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp|adder:pcadd1                                                                                            ; adder               ; work         ;
-;          |alu:alu|                              ; 1776 (652)          ; 0 (0)                     ; 0                 ; 16         ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp|alu:alu                                                                                                 ; alu                 ; work         ;
+;          |alu:alu|                              ; 1842 (718)          ; 0 (0)                     ; 0                 ; 20         ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp|alu:alu                                                                                                 ; alu                 ; work         ;
 ;             |lpm_divide:Div0|                   ; 1124 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp|alu:alu|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;                |lpm_divide_3dm:auto_generated|  ; 1124 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp|alu:alu|lpm_divide:Div0|lpm_divide_3dm:auto_generated                                                   ; lpm_divide_3dm      ; work         ;
 ;                   |sign_div_unsign_9nh:divider| ; 1124 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp|alu:alu|lpm_divide:Div0|lpm_divide_3dm:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
@@ -291,11 +291,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+-------------+
 ; Statistic                       ; Number Used ;
 +---------------------------------+-------------+
-; Two Independent 18x18           ; 8           ;
+; Two Independent 18x18           ; 10          ;
+; Independent 18x18 plus 36       ; 2           ;
 ; Sum of two 18x18                ; 8           ;
-; Total number of DSP blocks      ; 16          ;
+; Total number of DSP blocks      ; 20          ;
 ;                                 ;             ;
-; Fixed Point Unsigned Multiplier ; 24          ;
+; Fixed Point Unsigned Multiplier ; 28          ;
 +---------------------------------+-------------+
 
 
@@ -354,7 +355,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |top|result_selector:selector|Mux31                       ;
 ; 65:1               ; 32 bits   ; 1376 LEs      ; 1376 LEs             ; 0 LEs                  ; No         ; |top|arm:arm_inst|datapath:u_datapathdp|mux2:resmux|y[12] ;
-; 34:1               ; 32 bits   ; 704 LEs       ; 640 LEs              ; 64 LEs                 ; No         ; |top|arm:arm_inst|datapath:u_datapathdp|alu:alu|Mux51     ;
+; 38:1               ; 32 bits   ; 800 LEs       ; 704 LEs              ; 96 LEs                 ; No         ; |top|arm:arm_inst|datapath:u_datapathdp|alu:alu|Mux51     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
@@ -540,7 +541,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     CLR               ; 1                           ;
 ;     CLR SLD           ; 6                           ;
 ;     ENA               ; 2528                        ;
-; arriav_lcell_comb     ; 2898                        ;
+; arriav_lcell_comb     ; 2964                        ;
 ;     arith             ; 889                         ;
 ;         0 data inputs ; 61                          ;
 ;         1 data inputs ; 6                           ;
@@ -550,22 +551,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 524                         ;
 ;     extend            ; 25                          ;
 ;         7 data inputs ; 25                          ;
-;     normal            ; 1979                        ;
+;     normal            ; 2045                        ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 162                         ;
-;         3 data inputs ; 48                          ;
-;         4 data inputs ; 506                         ;
-;         5 data inputs ; 313                         ;
-;         6 data inputs ; 948                         ;
+;         2 data inputs ; 166                         ;
+;         3 data inputs ; 47                          ;
+;         4 data inputs ; 511                         ;
+;         5 data inputs ; 370                         ;
+;         6 data inputs ; 949                         ;
 ;     shared            ; 5                           ;
 ;         0 data inputs ; 2                           ;
 ;         2 data inputs ; 1                           ;
 ;         4 data inputs ; 2                           ;
-; arriav_mac            ; 16                          ;
+; arriav_mac            ; 20                          ;
 ; boundary_port         ; 80                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 108.60                      ;
-; Average LUT depth     ; 53.79                       ;
+; Average LUT depth     ; 53.32                       ;
 +-----------------------+-----------------------------+
 
 
@@ -574,7 +575,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -584,7 +585,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Nov 25 10:51:48 2025
+    Info: Processing started: Tue Nov 25 11:21:51 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off final_project -c final_project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -661,9 +662,9 @@ Info (276014): Found 2 instances of uninferred RAM logic
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/db/final_project.ram0_imem_37c714.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (15) in the Memory Initialization File "C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/db/final_project.ram0_regfile_4c9f4da2.hdl.mif" -- setting initial value for remaining addresses to 0
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "arm:arm_inst|datapath:u_datapathdp|alu:alu|Div0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv Line: 57
-Info (12130): Elaborated megafunction instantiation "arm:arm_inst|datapath:u_datapathdp|alu:alu|lpm_divide:Div0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv Line: 57
-Info (12133): Instantiated megafunction "arm:arm_inst|datapath:u_datapathdp|alu:alu|lpm_divide:Div0" with the following parameter: File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv Line: 57
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "arm:arm_inst|datapath:u_datapathdp|alu:alu|Div0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv Line: 51
+Info (12130): Elaborated megafunction instantiation "arm:arm_inst|datapath:u_datapathdp|alu:alu|lpm_divide:Div0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv Line: 51
+Info (12133): Instantiated megafunction "arm:arm_inst|datapath:u_datapathdp|alu:alu|lpm_divide:Div0" with the following parameter: File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/alu.sv Line: 51
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -679,15 +680,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 29 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5520 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5590 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 75 output pins
-    Info (21061): Implemented 5424 logic cells
-    Info (21062): Implemented 16 DSP elements
+    Info (21061): Implemented 5490 logic cells
+    Info (21062): Implemented 20 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4947 megabytes
-    Info: Processing ended: Tue Nov 25 10:52:03 2025
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 4949 megabytes
+    Info: Processing ended: Tue Nov 25 11:22:08 2025
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:30
 
 

@@ -26,36 +26,30 @@ module alu (
   logic [63:0] mul64;
   assign mul64   = A * B;
 
-  // DIV (A / B) - división sin signo
-	// DIV (A / B) - división sin signo
-	  logic [31:0] div_result;
+	// DIV (A / B) - división sin signo - tabla explícita
+	logic [31:0] div_result;
 
-	  always_comb begin
-		 if (B == 32'b0)
-			div_result = 32'b0;
-		 else if (A < B)
-			div_result = 32'b0;
-		 else if (A < (B * 32'd2))
-			div_result = 32'd1;
-		 else if (A < (B * 32'd3))
-			div_result = 32'd2;
-		 else if (A < (B * 32'd4))
-			div_result = 32'd3;
-		 else if (A < (B * 32'd5))
-			div_result = 32'd4;
-		 else if (A < (B * 32'd6))
-			div_result = 32'd5;
-		 else if (A < (B * 32'd7))
-			div_result = 32'd6;
-		 else if (A < (B * 32'd8))
-			div_result = 32'd7;
-		 else if (A < (B * 32'd9))
-			div_result = 32'd8;
-		 else if (A < (B * 32'd10))
-			div_result = 32'd9;
-		 else
-			div_result = A / B;
-	  end
+	always_comb begin
+	  if (B == 32'b0)
+		 div_result = 32'b0;
+	  else if (A < B)
+		 div_result = 32'b0;
+	  else if (A < (B * 32'd2))   div_result = 32'd1;
+	  else if (A < (B * 32'd3))   div_result = 32'd2;
+	  else if (A < (B * 32'd4))   div_result = 32'd3;
+	  else if (A < (B * 32'd5))   div_result = 32'd4;
+	  else if (A < (B * 32'd6))   div_result = 32'd5;
+	  else if (A < (B * 32'd7))   div_result = 32'd6;
+	  else if (A < (B * 32'd8))   div_result = 32'd7;
+	  else if (A < (B * 32'd9))   div_result = 32'd8;
+	  else if (A < (B * 32'd10))  div_result = 32'd9;
+	  else if (A < (B * 32'd20))  div_result = 32'd19;
+	  else if (A < (B * 32'd50))  div_result = 32'd49;
+	  else if (A < (B * 32'd100)) div_result = 32'd99;
+	  else if (A < (B * 32'd256)) div_result = 32'd255;
+	  else
+		 div_result = A / B;
+	end
 
   // POW (A ^ B) - potencia A elevado a B
   // Soporta exponentes de 0 a 15 usando los 4 bits inferiores de B
