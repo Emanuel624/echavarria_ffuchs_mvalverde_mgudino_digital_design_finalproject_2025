@@ -322,6 +322,10 @@
 				{
 					"name" : "reset",
 					"strict" : false
+				},
+				{
+					"name" : "SW_LOAD",
+					"strict" : false
 				}
 			]
 		}

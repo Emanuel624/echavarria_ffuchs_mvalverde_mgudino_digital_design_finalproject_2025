@@ -1,0 +1,6 @@
+
+State Machine - |top|load_state
+Name load_state.STATE_IDLE load_state.STATE_WRITE_B load_state.STATE_WRITE_A 
+load_state.STATE_IDLE 0 0 0 
+load_state.STATE_WRITE_A 1 0 1 
+load_state.STATE_WRITE_B 1 1 0 

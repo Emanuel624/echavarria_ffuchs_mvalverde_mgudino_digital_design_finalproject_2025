@@ -1,5 +1,5 @@
 Analysis & Synthesis report for final_project
-Tue Nov 25 11:22:08 2025
+Tue Nov 25 14:07:59 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -64,14 +64,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 25 11:22:08 2025       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 25 14:07:59 2025       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; final_project                               ;
 ; Top-level Entity Name           ; top                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 2535                                        ;
-; Total pins                      ; 80                                          ;
+; Total registers                 ; 2538                                        ;
+; Total pins                      ; 81                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 20                                          ;
@@ -186,8 +186,8 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
@@ -234,25 +234,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 2363      ;
+; Estimate of Logic utilization (ALMs needed) ; 2365      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 2964      ;
+; Combinational ALUT usage for logic          ; 2968      ;
 ;     -- 7 input functions                    ; 25        ;
 ;     -- 6 input functions                    ; 949       ;
-;     -- 5 input functions                    ; 894       ;
+;     -- 5 input functions                    ; 895       ;
 ;     -- 4 input functions                    ; 615       ;
-;     -- <=3 input functions                  ; 481       ;
+;     -- <=3 input functions                  ; 484       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 2535      ;
+; Dedicated logic registers                   ; 2538      ;
 ;                                             ;           ;
-; I/O pins                                    ; 80        ;
+; I/O pins                                    ; 81        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 20        ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 2535      ;
-; Total fan-out                               ; 22957     ;
-; Average fan-out                             ; 4.04      ;
+; Maximum fan-out                             ; 2538      ;
+; Total fan-out                               ; 23040     ;
+; Average fan-out                             ; 4.05      ;
 +---------------------------------------------+-----------+
 
 
@@ -261,7 +261,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                             ; Entity Name         ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top                                            ; 2964 (0)            ; 2535 (0)                  ; 0                 ; 20         ; 80   ; 0            ; |top                                                                                                                                            ; top                 ; work         ;
+; |top                                            ; 2968 (1)            ; 2538 (3)                  ; 0                 ; 20         ; 81   ; 0            ; |top                                                                                                                                            ; top                 ; work         ;
 ;    |arm:arm_inst|                               ; 2822 (0)            ; 487 (0)                   ; 0                 ; 20         ; 0    ; 0            ; |top|arm:arm_inst                                                                                                                               ; arm                 ; work         ;
 ;       |controllerc:u_controllerc|               ; 20 (0)              ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|controllerc:u_controllerc                                                                                                     ; controllerc         ; work         ;
 ;          |condlogic:u_condlogic|                ; 14 (4)              ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|controllerc:u_controllerc|condlogic:u_condlogic                                                                               ; condlogic           ; work         ;
@@ -279,7 +279,7 @@ https://fpgasoftware.intel.com/eula.
 ;          |mux2:resmux|                          ; 703 (703)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp|mux2:resmux                                                                                             ; mux2                ; work         ;
 ;          |mux2:srcbmux|                         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp|mux2:srcbmux                                                                                            ; mux2                ; work         ;
 ;          |regfile:rf|                           ; 216 (216)           ; 480 (480)                 ; 0                 ; 0          ; 0    ; 0            ; |top|arm:arm_inst|datapath:u_datapathdp|regfile:rf                                                                                              ; regfile             ; work         ;
-;    |dmem:dmem|                                  ; 98 (98)             ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |top|dmem:dmem                                                                                                                                  ; dmem                ; work         ;
+;    |dmem:dmem|                                  ; 101 (101)           ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |top|dmem:dmem                                                                                                                                  ; dmem                ; work         ;
 ;    |imem:imem|                                  ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|imem:imem                                                                                                                                  ; imem                ; work         ;
 ;    |result_selector:selector|                   ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|result_selector:selector                                                                                                                   ; result_selector     ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
@@ -327,12 +327,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2535  ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 2538  ;
+; Number of registers using Synchronous Clear  ; 59    ;
 ; Number of registers using Synchronous Load   ; 6     ;
-; Number of registers using Asynchronous Clear ; 7     ;
+; Number of registers using Asynchronous Clear ; 10    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2528  ;
+; Number of registers using Clock Enable       ; 2527  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -343,7 +343,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; dmem:dmem|RAM[0][3]                    ; 1       ;
-; dmem:dmem|RAM[1][1]                    ; 1       ;
+; dmem:dmem|RAM[1][1]                    ; 2       ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
@@ -353,7 +353,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |top|result_selector:selector|Mux31                       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|dmem:dmem|RAM[1][0]                                  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 0 LEs                ; 58 LEs                 ; Yes        ; |top|dmem:dmem|RAM[1][15]                                 ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |top|dmem:dmem|RAM[0][22]                                 ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |top|result_selector:selector|Mux24                       ;
 ; 65:1               ; 32 bits   ; 1376 LEs      ; 1376 LEs             ; 0 LEs                  ; No         ; |top|arm:arm_inst|datapath:u_datapathdp|mux2:resmux|y[12] ;
 ; 38:1               ; 32 bits   ; 800 LEs       ; 704 LEs              ; 96 LEs                 ; No         ; |top|arm:arm_inst|datapath:u_datapathdp|alu:alu|Mux51     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
@@ -537,11 +540,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 2535                        ;
-;     CLR               ; 1                           ;
+; arriav_ff             ; 2538                        ;
+;     CLR               ; 4                           ;
 ;     CLR SLD           ; 6                           ;
-;     ENA               ; 2528                        ;
-; arriav_lcell_comb     ; 2964                        ;
+;     ENA               ; 2468                        ;
+;     ENA SCLR          ; 59                          ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 2968                        ;
 ;     arith             ; 889                         ;
 ;         0 data inputs ; 61                          ;
 ;         1 data inputs ; 6                           ;
@@ -551,22 +556,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 524                         ;
 ;     extend            ; 25                          ;
 ;         7 data inputs ; 25                          ;
-;     normal            ; 2045                        ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 166                         ;
-;         3 data inputs ; 47                          ;
+;     normal            ; 2049                        ;
+;         2 data inputs ; 169                         ;
+;         3 data inputs ; 49                          ;
 ;         4 data inputs ; 511                         ;
-;         5 data inputs ; 370                         ;
+;         5 data inputs ; 371                         ;
 ;         6 data inputs ; 949                         ;
 ;     shared            ; 5                           ;
 ;         0 data inputs ; 2                           ;
 ;         2 data inputs ; 1                           ;
 ;         4 data inputs ; 2                           ;
 ; arriav_mac            ; 20                          ;
-; boundary_port         ; 80                          ;
+; boundary_port         ; 81                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 108.60                      ;
-; Average LUT depth     ; 53.32                       ;
+; Average LUT depth     ; 53.27                       ;
 +-----------------------+-----------------------------+
 
 
@@ -575,7 +579,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:07     ;
 +----------------+--------------+
 
 
@@ -585,7 +589,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Nov 25 11:21:51 2025
+    Info: Processing started: Tue Nov 25 14:07:44 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off final_project -c final_project
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -634,8 +638,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file bcd_to_
     Info (12023): Found entity 1: bcd_to_7seg File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/bcd_to_7seg.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file display_controller.sv
     Info (12023): Found entity 1: display_controller File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/display_controller.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/input_controller.sv
+    Info (12023): Found entity 1: input_controller File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/output_files/input_controller.sv Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "arm" for hierarchy "arm:arm_inst" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top.sv Line: 28
+Info (12128): Elaborating entity "arm" for hierarchy "arm:arm_inst" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top.sv Line: 55
 Info (12128): Elaborating entity "controllerc" for hierarchy "arm:arm_inst|controllerc:u_controllerc" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/arm.sv Line: 22
 Info (12128): Elaborating entity "decoderdec" for hierarchy "arm:arm_inst|controllerc:u_controllerc|decoderdec:u_decoderdec" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/controllerc.sv Line: 27
 Info (12128): Elaborating entity "condlogic" for hierarchy "arm:arm_inst|controllerc:u_controllerc|condlogic:u_condlogic" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/controllerc.sv Line: 36
@@ -649,13 +655,13 @@ Info (12128): Elaborating entity "mux2" for hierarchy "arm:arm_inst|datapath:u_d
 Info (12128): Elaborating entity "regfile" for hierarchy "arm:arm_inst|datapath:u_datapathdp|regfile:rf" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/datapath.sv Line: 46
 Info (12128): Elaborating entity "extend" for hierarchy "arm:arm_inst|datapath:u_datapathdp|extend:ext" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/datapath.sv Line: 48
 Info (12128): Elaborating entity "alu" for hierarchy "arm:arm_inst|datapath:u_datapathdp|alu:alu" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/datapath.sv Line: 61
-Info (12128): Elaborating entity "imem" for hierarchy "imem:imem" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top.sv Line: 30
+Info (12128): Elaborating entity "imem" for hierarchy "imem:imem" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top.sv Line: 57
 Warning (10850): Verilog HDL warning at imem.sv(8): number of words (39) in memory file does not match the number of elements in the address range [0:63] File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv Line: 8
 Warning (10030): Net "RAM.data_a" at imem.sv(6) has no driver or initial value, using a default initial value '0' File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv Line: 6
 Warning (10030): Net "RAM.waddr_a" at imem.sv(6) has no driver or initial value, using a default initial value '0' File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv Line: 6
 Warning (10030): Net "RAM.we_a" at imem.sv(6) has no driver or initial value, using a default initial value '0' File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv Line: 6
-Info (12128): Elaborating entity "dmem" for hierarchy "dmem:dmem" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top.sv Line: 42
-Info (12128): Elaborating entity "result_selector" for hierarchy "result_selector:selector" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top.sv Line: 56
+Info (12128): Elaborating entity "dmem" for hierarchy "dmem:dmem" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top.sv Line: 74
+Info (12128): Elaborating entity "result_selector" for hierarchy "result_selector:selector" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/top.sv Line: 84
 Info (276014): Found 2 instances of uninferred RAM logic
     Info (276004): RAM logic "imem:imem|RAM" is uninferred due to inappropriate RAM size File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/imem.sv Line: 6
     Info (276007): RAM logic "arm:arm_inst|datapath:u_datapathdp|regfile:rf|rf" is uninferred due to asynchronous read logic File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/Proyecto_Final/echavarria_ffuchs_mvalverde_mgudino_digital_design_finalproject_2025/regfile.sv Line: 11
@@ -680,15 +686,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 29 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5590 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
+Info (21057): Implemented 5594 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
     Info (21059): Implemented 75 output pins
-    Info (21061): Implemented 5490 logic cells
+    Info (21061): Implemented 5493 logic cells
     Info (21062): Implemented 20 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4949 megabytes
-    Info: Processing ended: Tue Nov 25 11:22:08 2025
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Peak virtual memory: 4939 megabytes
+    Info: Processing ended: Tue Nov 25 14:07:59 2025
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:26
 
 
