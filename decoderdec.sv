@@ -68,6 +68,7 @@ module decoderdec (
         4'b1100: ALUControl = 3'b011; // ORR
         4'b0101: ALUControl = 3'b100; // MUL
         4'b0110: ALUControl = 3'b101; // DIV
+        4'b0111: ALUControl = 3'b110; // POW
         default: ALUControl = 3'b000; // por seguridad
       endcase
 
