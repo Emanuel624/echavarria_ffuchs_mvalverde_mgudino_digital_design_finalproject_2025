@@ -326,6 +326,10 @@
 				{
 					"name" : "SW_LOAD",
 					"strict" : false
+				},
+				{
+					"name" : "SW_RESET",
+					"strict" : false
 				}
 			]
 		}

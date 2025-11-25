@@ -4,8 +4,9 @@ module dmem (
   input  logic [31:0] a,
   input  logic [31:0] wd,
   output logic [31:0] rd,
-  // Nueva entrada para cargar
+  // Nuevas entradas para cargar
   input  logic        load_en,
+  input  logic        reset_en,
   // Salidas
   output logic [31:0] result_suma,
   output logic [31:0] result_resta,
@@ -25,10 +26,16 @@ module dmem (
     if (we)
       RAM[a[7:2]] <= wd;
     
-    // Cuando presionas el switch, carga valores quemados
+    // Cuando presionas LOAD, carga valores quemados
     if (load_en) begin
-      RAM[0] <= 32'd10;    // Carga 10 en RAM[0]
-      RAM[1] <= 32'd5;     // Carga 5 en RAM[1]
+      RAM[0] <= 32'd10;
+      RAM[1] <= 32'd5;
+    end
+    
+    // Cuando presionas RESET, pone todo en 0
+    if (reset_en) begin
+      RAM[0] <= 32'd0;
+      RAM[1] <= 32'd0;
     end
   end
 

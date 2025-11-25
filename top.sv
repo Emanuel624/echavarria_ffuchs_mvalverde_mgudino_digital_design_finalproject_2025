@@ -3,6 +3,7 @@ module top (
   input  logic        reset,
   input  logic [2:0]  SW,
   input  logic        SW_LOAD,
+  input  logic        SW_RESET,
   output logic [31:0] WriteData,
   output logic [31:0] DataAdr,
   output logic        MemWrite,
@@ -12,35 +13,71 @@ module top (
   logic [31:0] PC, Instr, ReadData, ALUResult;
   logic [31:0] selected_result;
   logic [31:0] suma, resta, mult, div_result, pow_result;
-  logic sw_r1, sw_r2, sw_pulse;
+  
+  // Señales para LOAD
+  logic load_r1, load_r2, load_pulse;
   logic load_en;
+  
+  // Señales para RESET
+  logic reset_r1, reset_r2, reset_pulse;
+  logic reset_en;
 
   // =====================================================
-  // DEBOUNCE Y DETECTOR DE FLANCO
+  // DEBOUNCE Y DETECTOR DE FLANCO PARA SW_LOAD
   // =====================================================
   always_ff @(posedge clk or posedge reset) begin
     if (reset) begin
-      sw_r1 <= 1'b0;
-      sw_r2 <= 1'b0;
+      load_r1 <= 1'b0;
+      load_r2 <= 1'b0;
     end else begin
-      sw_r1 <= SW_LOAD;
-      sw_r2 <= sw_r1;
+      load_r1 <= SW_LOAD;
+      load_r2 <= load_r1;
     end
   end
 
-  assign sw_pulse = sw_r1 & ~sw_r2;
+  assign load_pulse = load_r1 & ~load_r2;
 
   // =====================================================
-  // ACTIVAR CARGA CUANDO DETECTA FLANCO
+  // DEBOUNCE Y DETECTOR DE FLANCO PARA SW_RESET
+  // =====================================================
+  always_ff @(posedge clk or posedge reset) begin
+    if (reset) begin
+      reset_r1 <= 1'b0;
+      reset_r2 <= 1'b0;
+    end else begin
+      reset_r1 <= SW_RESET;
+      reset_r2 <= reset_r1;
+    end
+  end
+
+  assign reset_pulse = reset_r1 & ~reset_r2;
+
+  // =====================================================
+  // ACTIVAR CARGA CUANDO DETECTA FLANCO EN SW_LOAD
   // =====================================================
   always_ff @(posedge clk or posedge reset) begin
     if (reset) begin
       load_en <= 1'b0;
     end else begin
-      if (sw_pulse) begin
-        load_en <= 1'b1;      // Se activa cuando sube el switch
+      if (load_pulse) begin
+        load_en <= 1'b1;
       end else begin
-        load_en <= 1'b0;      // Se desactiva el siguiente ciclo
+        load_en <= 1'b0;
+      end
+    end
+  end
+
+  // =====================================================
+  // ACTIVAR RESET CUANDO DETECTA FLANCO EN SW_RESET
+  // =====================================================
+  always_ff @(posedge clk or posedge reset) begin
+    if (reset) begin
+      reset_en <= 1'b0;
+    end else begin
+      if (reset_pulse) begin
+        reset_en <= 1'b1;
+      end else begin
+        reset_en <= 1'b0;
       end
     end
   end
@@ -66,6 +103,7 @@ module top (
     .wd(WriteData),
     .rd(ReadData),
     .load_en(load_en),
+    .reset_en(reset_en),
     .result_suma(suma),
     .result_resta(resta),
     .result_mult(mult),
