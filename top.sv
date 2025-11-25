@@ -1,71 +1,67 @@
 module top (
   input  logic        clk,
   input  logic        reset,
+  input  logic [2:0]  SW,          // Switches para seleccionar operación
   output logic [31:0] WriteData,
   output logic [31:0] DataAdr,
   output logic        MemWrite,
-  output logic [7:0]  LED
+  output logic [9:0]  LED          // 10 LEDs para mostrar en binario
 );
   logic [31:0] PC, Instr, ReadData, ALUResult;
-  logic        clk_div;  // Reloj dividido (lento)
   
-  // Señales adicionales para el led_controller
-  logic [2:0] ALUControl;
-  logic       RegWrite;
-
-  // =====================================================
-  // DIVISOR DE FRECUENCIA
-  // =====================================================
-  // Divide el reloj de 50 MHz
-  // Para ver cada instrucción claramente
-  // =====================================================
-  logic [24:0] clk_counter;
-
-  always_ff @(posedge clk or posedge reset) begin
-    if (reset) begin
-      clk_counter <= 25'b0;
-    end else begin
-      clk_counter <= clk_counter + 1'b1;
-    end
-  end
-
-  // Esto crea un reloj de ~1 Hz (cada instrucción tarda ~1 segundo)
-  assign clk_div = clk_counter[24];
+  // Señales para display
+  logic [31:0] selected_result;
+  logic [31:0] suma, resta, mult, div_result, pow_result;
 
   // =====================================================
   // INSTANCIA DEL PROCESADOR ARM
   // =====================================================
   arm arm_inst (
-    .clk(clk_div), 
+    .clk(clk), 
     .reset(reset), 
     .PC(PC), 
     .Instr(Instr), 
     .MemWrite(MemWrite), 
     .ALUResult(ALUResult), 
     .WriteData(WriteData), 
-    .ReadData(ReadData),
-    .ALUControl(ALUControl),
-    .RegWrite(RegWrite)
+    .ReadData(ReadData)
   );
   
   imem imem (PC, Instr);
-  dmem dmem (clk_div, MemWrite, ALUResult, WriteData, ReadData);
-
-  // =====================================================
-  // INSTANCIA DEL CONTROLADOR DE LEDs
-  // =====================================================
-  led_controller led_ctrl (
-    .clk(clk_div),           // reloj dividido
-    .reset(reset),
-    .Instr(Instr),
-    .PC(PC),
-    .ALUResult(ALUResult),   // Resultado del ALU
-    .ALUControl(ALUControl), // Control del ALU (nos dice qué operación se hizo)
-    .RegWrite(RegWrite),     // Flag de escritura en registro
-    .LED(LED)
+  dmem dmem (
+    .clk(clk), 
+    .we(MemWrite), 
+    .a(ALUResult), 
+    .wd(WriteData), 
+    .rd(ReadData),
+    .result_suma(suma),
+    .result_resta(resta),
+    .result_mult(mult),
+    .result_div(div_result),
+    .result_pow(pow_result)
   );
 
-  // Asignar ALUResult a DataAdr para que el testbench pueda verlo
+  // =====================================================
+  // LÓGICA DE DISPLAY EN LEDs BINARIOS
+  // =====================================================
+  // Selector: qué resultado mostrar basado en switches
+  result_selector selector (
+    .selector(SW),
+    .suma(suma),
+    .resta(resta),
+    .mult(mult),
+    .div_result(div_result),
+    .pow_result(pow_result),
+    .result(selected_result)
+  );
+
+  // Mostrar resultado en binario en los 10 LEDs
+  // LED[9:0] = bits del resultado [9:0]
+  assign LED = selected_result[9:0];
+
+  // =====================================================
+  // SALIDAS
+  // =====================================================
   assign DataAdr = ALUResult;
 
 endmodule
