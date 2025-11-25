@@ -27,8 +27,35 @@ module alu (
   assign mul64   = A * B;
 
   // DIV (A / B) - división sin signo
-  logic [31:0] div_result;
-  assign div_result = (B != 32'b0) ? (A / B) : 32'b0;  // protección contra división por cero
+	// DIV (A / B) - división sin signo
+	  logic [31:0] div_result;
+
+	  always_comb begin
+		 if (B == 32'b0)
+			div_result = 32'b0;
+		 else if (A < B)
+			div_result = 32'b0;
+		 else if (A < (B * 32'd2))
+			div_result = 32'd1;
+		 else if (A < (B * 32'd3))
+			div_result = 32'd2;
+		 else if (A < (B * 32'd4))
+			div_result = 32'd3;
+		 else if (A < (B * 32'd5))
+			div_result = 32'd4;
+		 else if (A < (B * 32'd6))
+			div_result = 32'd5;
+		 else if (A < (B * 32'd7))
+			div_result = 32'd6;
+		 else if (A < (B * 32'd8))
+			div_result = 32'd7;
+		 else if (A < (B * 32'd9))
+			div_result = 32'd8;
+		 else if (A < (B * 32'd10))
+			div_result = 32'd9;
+		 else
+			div_result = A / B;
+	  end
 
   // POW (A ^ B) - potencia A elevado a B
   // Soporta exponentes de 0 a 15 usando los 4 bits inferiores de B
