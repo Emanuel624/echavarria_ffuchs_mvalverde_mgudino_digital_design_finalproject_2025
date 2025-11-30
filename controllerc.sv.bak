@@ -1,0 +1,46 @@
+`default_nettype none
+
+module controllerc (
+  input  logic        clk,
+  input  logic        reset,
+  // OJO: acá recibimos los 20 bits superiores de la instrucción: Instr[31:12]
+  input  logic [19:0] Instr,
+  input  logic [3:0]  ALUFlags,
+
+  output logic [1:0]  RegSrc,
+  output logic        RegWrite,
+  output logic [1:0]  ImmSrc,
+  output logic        ALUSrc,
+  output logic [1:0]  ALUControl,
+  output logic        MemWrite,
+  output logic        MemtoReg,
+  output logic        PCSrc
+);
+
+  logic [1:0] FlagW;
+  logic       PCS, RegW, MemW;
+
+  // Mapeos desde los 20 bits locales:
+  // op     = original Instr[31:30] => local Instr[19:18]
+  // funct  = original Instr[29:24] => local Instr[17:12]
+  // rd(hi) = original Instr[15:12] => local Instr[3:0]
+  decoderdec u_decoderdec (
+    Instr[19:18],   // op
+    Instr[17:12],   // funct
+    Instr[3:0],     // rd[15:12]
+    FlagW, PCS, RegW, MemW,
+    MemtoReg, ALUSrc, ImmSrc, RegSrc, ALUControl
+  );
+
+  // cond (Instr[31:28]) => local Instr[19:16]
+  condlogiccl u_condlogiccl (
+    clk, reset,
+    Instr[19:16],   // cond
+    ALUFlags,
+    FlagW, PCS, RegW, MemW,
+    PCSrc, RegWrite, MemWrite
+  );
+
+endmodule
+
+`default_nettype wire
