@@ -1,0 +1,98 @@
+--lpm_divide DEVICE_FAMILY="Cyclone V" OPTIMIZE_FOR_SPEED=5 denom numer quotient CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 IGNORE_CARRY_BUFFERS="OFF"
+--VERSION_BEGIN 20.1 cbx_cycloneii 2020:06:05:12:04:51:SJ cbx_lpm_abs 2020:06:05:12:04:51:SJ cbx_lpm_add_sub 2020:06:05:12:04:51:SJ cbx_lpm_divide 2020:06:05:12:04:51:SJ cbx_mgl 2020:06:05:12:11:10:SJ cbx_nadder 2020:06:05:12:04:51:SJ cbx_stratix 2020:06:05:12:04:51:SJ cbx_stratixii 2020:06:05:12:04:51:SJ cbx_util_mgl 2020:06:05:12:04:51:SJ  VERSION_END
+
+
+-- Copyright (C) 2020  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and any partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel FPGA IP License Agreement, or other applicable license
+--  agreement, including, without limitation, that your use is for
+--  the sole purpose of programming logic devices manufactured by
+--  Intel and sold by Intel or its authorized distributors.  Please
+--  refer to the applicable agreement for further details, at
+--  https://fpgasoftware.intel.com/eula.
+
+
+
+--synthesis_resources = 
+SUBDESIGN lpm_divide_ptd
+( 
+	denom	:	input;
+	numer	:	input;
+	quotient	:	output;
+) 
+
+BEGIN 
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHD has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHN has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHD has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHN has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHD has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHN has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHD has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHN has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHN has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "In lpm_divide megafunction, LPM_WIDTHN must be greater than 0"
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHD has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "In lpm_divide megafunction, LPM_WIDTHD must be greater than 0"
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHN has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHD has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHD has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Invalid parameter LPM_WIDTHD is used to specify the width of port lpm_divide|denom. CAUSE : The parameter is being used to specify the width of a port. However the parameter does not exist or is a string parameter (only integer parameters can be used to specify widths of ports). ACTION : Use a valid integer parameter name to specify port widths."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHN has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Invalid parameter LPM_WIDTHN is used to specify the width of port lpm_divide|numer. CAUSE : The parameter is being used to specify the width of a port. However the parameter does not exist or is a string parameter (only integer parameters can be used to specify widths of ports). ACTION : Use a valid integer parameter name to specify port widths."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHN has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Invalid parameter LPM_WIDTHN is used to specify the width of port lpm_divide|quotient. CAUSE : The parameter is being used to specify the width of a port. However the parameter does not exist or is a string parameter (only integer parameters can be used to specify widths of ports). ACTION : Use a valid integer parameter name to specify port widths."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Parameter lpm_divide|LPM_WIDTHD has no default value and has not been assigned any value. CAUSE : An attempt was made to access the value of a parameter which has no default, and has not been assigned a value. All parameters should have a default value, or, if the parameter is a required parameter, an assignment should be made. ACTION : Specify a value for the parameter or if the parameter is an optional parameter, specify a default value."
+	SEVERITY ERROR;
+	ASSERT (0) 
+	REPORT "MGL_INTERNAL_ERROR: Invalid parameter LPM_WIDTHD is used to specify the width of port lpm_divide|remain. CAUSE : The parameter is being used to specify the width of a port. However the parameter does not exist or is a string parameter (only integer parameters can be used to specify widths of ports). ACTION : Use a valid integer parameter name to specify port widths."
+	SEVERITY ERROR;
+END;
+--ERROR FILE

@@ -1,0 +1,28 @@
+module display_controller (
+  input  logic [31:0] result_value,
+  output logic [6:0]  seg_ones,    // 7-segmentos para unidades
+  output logic [6:0]  seg_tens     // 7-segmentos para decenas
+);
+
+  logic [3:0] bcd_ones, bcd_tens;
+
+  // Convertir binario a BCD
+  binary_to_bcd bcd_conv (
+    .binary(result_value),
+    .bcd_ones(bcd_ones),
+    .bcd_tens(bcd_tens)
+  );
+
+  // Convertir dígito de unidades a 7-segmentos
+  bcd_to_7seg seg_conv_ones (
+    .bcd_digit(bcd_ones),
+    .seg_code(seg_ones)
+  );
+
+  // Convertir dígito de decenas a 7-segmentos
+  bcd_to_7seg seg_conv_tens (
+    .bcd_digit(bcd_tens),
+    .seg_code(seg_tens)
+  );
+
+endmodule

@@ -1,0 +1,41 @@
+`default_nettype none
+// `timescale 1ns/1ps  // (opcional)
+
+module testbench();
+  logic        clk;
+  logic        reset;
+  logic [31:0] WriteData, DataAdr;
+  logic        MemWrite;
+
+  // instantiate device under test (DUT)
+  // Mantengo el nombre de módulo "topdut" y agrego nombre de instancia "dut"
+  topdut dut (clk, reset, WriteData, DataAdr, MemWrite);
+
+  // init test
+  initial begin
+    clk   = 1'b0;
+    reset = 1'b1;
+    #22;
+    reset = 1'b0;
+  end
+
+  // generate clock to sequence tests
+  always #5 clk = ~clk;
+
+  // check that 7 gets written to address 0x64 (100)
+  // at end of program
+  always @(negedge clk) begin
+    if (MemWrite) begin
+      if ((DataAdr === 32'd100) && (WriteData === 32'd7)) begin
+        $display("Simulation succeeded");
+        $stop;
+      end
+      else if (DataAdr !== 32'd96) begin
+        $display("Simulation failed");
+        $stop;
+      end
+    end
+  end
+endmodule
+
+`default_nettype wire
