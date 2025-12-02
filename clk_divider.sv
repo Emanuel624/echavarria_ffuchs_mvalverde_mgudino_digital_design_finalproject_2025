@@ -1,4 +1,4 @@
-// clk_divider.sv
+
 module clk_divider (
     input  logic clk_50mhz,
     input  logic reset_n,

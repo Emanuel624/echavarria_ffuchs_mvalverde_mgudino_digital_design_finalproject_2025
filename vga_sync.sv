@@ -1,4 +1,4 @@
-// vga_sync.sv
+
 module vga_sync (
     input  logic       clk_25mhz,
     input  logic       reset_n,

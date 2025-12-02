@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSXFC6D6F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY top_vga_calc
+set_global_assignment -name TOP_LEVEL_ENTITY top_system
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:57:00  NOVEMBER 06, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -52,43 +52,11 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name SYSTEMVERILOG_FILE top.sv
-set_global_assignment -name SYSTEMVERILOG_FILE spi_slave_receiver.sv
 set_location_assignment PIN_AA30 -to reset_n
-set_location_assignment PIN_AF24 -to leds[7]
-set_location_assignment PIN_AE24 -to leds[6]
-set_location_assignment PIN_AF25 -to leds[5]
-set_location_assignment PIN_AG25 -to leds[4]
-set_location_assignment PIN_AD24 -to leds[3]
-set_location_assignment PIN_AC23 -to leds[2]
-set_location_assignment PIN_AB23 -to leds[1]
-set_location_assignment PIN_AA24 -to leds[0]
 set_location_assignment PIN_AK2 -to pi_spi_cs_n
 set_location_assignment PIN_AK3 -to pi_spi_mosi
 set_location_assignment PIN_AJ2 -to pi_spi_sclk
 set_location_assignment PIN_W15 -to pi_spi_miso
-set_global_assignment -name SYSTEMVERILOG_FILE bin_to_bcd.sv
-set_global_assignment -name SYSTEMVERILOG_FILE seven_seg_decoder.sv
-set_location_assignment PIN_AH18 -to hex0[6]
-set_location_assignment PIN_AG18 -to hex0[5]
-set_location_assignment PIN_AH17 -to hex0[4]
-set_location_assignment PIN_AG16 -to hex0[3]
-set_location_assignment PIN_AG17 -to hex0[2]
-set_location_assignment PIN_V18 -to hex0[1]
-set_location_assignment PIN_W17 -to hex0[0]
-set_location_assignment PIN_V17 -to hex1[6]
-set_location_assignment PIN_AE17 -to hex1[5]
-set_location_assignment PIN_AE18 -to hex1[4]
-set_location_assignment PIN_AD17 -to hex1[3]
-set_location_assignment PIN_AE16 -to hex1[2]
-set_location_assignment PIN_V16 -to hex1[1]
-set_location_assignment PIN_AF16 -to hex1[0]
-set_global_assignment -name SYSTEMVERILOG_FILE top_test.sv
-set_global_assignment -name SYSTEMVERILOG_FILE vga_sync.sv
-set_global_assignment -name SYSTEMVERILOG_FILE clk_divider.sv
-set_global_assignment -name SYSTEMVERILOG_FILE char_block.sv
-set_global_assignment -name SYSTEMVERILOG_FILE calc_display.sv
-set_global_assignment -name SYSTEMVERILOG_FILE top_vga_calc.sv
 set_location_assignment PIN_AF14 -to clk_50mhz
 set_location_assignment PIN_AK19 -to vga_hsync
 set_location_assignment PIN_AK29 -to vga_r[0]
@@ -116,11 +84,65 @@ set_location_assignment PIN_AJ19 -to vga_b[3]
 set_location_assignment PIN_AH20 -to vga_b[2]
 set_location_assignment PIN_AJ20 -to vga_b[1]
 set_location_assignment PIN_AJ21 -to vga_b[0]
-set_global_assignment -name SYSTEMVERILOG_FILE top_vga_test.sv
 set_location_assignment PIN_AK21 -to vga_clk
 set_location_assignment PIN_AK22 -to vga_blank_n
 set_location_assignment PIN_AJ22 -to vga_sync_n
+set_global_assignment -name SYSTEMVERILOG_FILE top_sim.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench.sv
+set_global_assignment -name SYSTEMVERILOG_FILE result_selector.sv
+set_global_assignment -name SYSTEMVERILOG_FILE regfile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE mux2.sv
+set_global_assignment -name SYSTEMVERILOG_FILE led_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE imem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE flopr.sv
+set_global_assignment -name SYSTEMVERILOG_FILE flopenr.sv
+set_global_assignment -name SYSTEMVERILOG_FILE extend.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dmem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE decoderdec.sv
+set_global_assignment -name SYSTEMVERILOG_FILE datapath.sv
+set_global_assignment -name SYSTEMVERILOG_FILE controllerc.sv
+set_global_assignment -name SYSTEMVERILOG_FILE condlogic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE arm.sv
+set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE adder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE top.sv
+set_global_assignment -name SYSTEMVERILOG_FILE spi_slave_receiver.sv
+set_global_assignment -name SYSTEMVERILOG_FILE bin_to_bcd.sv
+set_global_assignment -name SYSTEMVERILOG_FILE seven_seg_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE top_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE vga_sync.sv
+set_global_assignment -name SYSTEMVERILOG_FILE clk_divider.sv
+set_global_assignment -name SYSTEMVERILOG_FILE char_block.sv
+set_global_assignment -name SYSTEMVERILOG_FILE calc_display.sv
+set_global_assignment -name SYSTEMVERILOG_FILE top_vga_calc.sv
+set_global_assignment -name SYSTEMVERILOG_FILE top_vga_test.sv
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SYSTEMVERILOG_FILE top_system.sv
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE calc_input_parser.sv
+set_location_assignment PIN_AC22 -to LED[9]
+set_location_assignment PIN_AB22 -to LED[8]
+set_location_assignment PIN_AF24 -to LED[7]
+set_location_assignment PIN_AE24 -to LED[6]
+set_location_assignment PIN_AF25 -to LED[5]
+set_location_assignment PIN_AG25 -to LED[4]
+set_location_assignment PIN_AD24 -to LED[3]
+set_location_assignment PIN_AC23 -to LED[2]
+set_location_assignment PIN_AB23 -to LED[1]
+set_location_assignment PIN_AA24 -to LED[0]
+set_global_assignment -name SYSTEMVERILOG_FILE pulse_sync.sv
+set_location_assignment PIN_AD30 -to sw_a[3]
+set_location_assignment PIN_AC28 -to sw_a[2]
+set_location_assignment PIN_V25 -to sw_a[1]
+set_location_assignment PIN_W25 -to sw_a[0]
+set_location_assignment PIN_AC30 -to sw_b[3]
+set_location_assignment PIN_AB28 -to sw_b[2]
+set_location_assignment PIN_Y27 -to sw_b[1]
+set_location_assignment PIN_AB30 -to sw_b[0]
+set_location_assignment PIN_AJ4 -to btn_eval
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,4 +1,4 @@
-// char_block.sv
+
 module char_block (
     input  logic [7:0] ascii_code,
     input  logic [4:0] char_x,
